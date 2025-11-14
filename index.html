@@ -1,268 +1,463 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheekar Banerjee | Academic Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="sheekar2.jpg">
 
-  <title>Sheekar Banerjee</title>
-  
-  <meta name="author" content="Sheekar Banerjee">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="icon" type="image/png" href="sheekar2.jpg">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
 
-  <style>
-    .gif-background {
-      width: 70%;
-      
-      height: 300px;
-      background-image: url('Worklifevinacts.gif');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 24px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      margin-bottom: 20px;
-    }
-    
-    .additional-images-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 20px 0;
-      width: 100%;
-    }
-    
-    .additional-image {
-      flex: 1;
-      min-width: 250px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .additional-image-container {
-      width: 100%;
-      height: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    
-    .additional-image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    
-    .additional-image-container img:hover {
-      transform: scale(1.02);
-    }
-    
-    .image-caption {
-      margin-top: 10px;
-      text-align: center;
-      font-style: italic;
-      color: #555;
-      font-size: 0.9rem;
-    }
-    
-    .additional-heading {
-      text-align: center;
-      margin: 20px 0 15px 0;
-      color: #2c3e50;
-      font-weight: 600;
-      width: 100%;
-    }
-    
-    @media (max-width: 768px) {
-      .additional-images-container {
-        flex-direction: column;
-      }
-    }
-  </style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--secondary) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 76px;
+        }
+
+        .hero-section h1, 
+        .hero-section h4, 
+        .hero-section p, 
+        .hero-section .lead {
+            color: white !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .card {
+            border: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .news-item, .award-item, .volunteer-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .news-item:last-child, .award-item:last-child, .volunteer-item:last-child {
+            border-bottom: none;
+        }
+
+        .badge-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .work-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .work-item {
+            flex: 1;
+            min-width: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .work-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .work-item:hover img {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .work-gallery {
+                flex-direction: column;
+            }
+            
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="index.html">Home</a>
-    
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="research.html">Research</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="projects.html">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="teach.html">Teaching</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="leader.html">Competitions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="workshops.html">Workshops</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="culture.html">Culture</a>
-      </li>
-    </ul>
-  </nav><br>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                
-                <h1 style="text-align: center;"><name>Sheekar Banerjee</name></h1>
-              </p>
-              <p>I am a prospective graduate student of Computer Science. Currently, I am working as a 
-                Lecturer at the Department of Computer Science and Engineering at <a href="https://iubat.edu/">IUBAT</a>, 
-                Dhaka, Bangladesh. 
-                I completed my BSc in Computer Science 
-                and Engineering from <a href="https://iubat.edu/">IUBAT</a> in 2020. 
-                
-                <br><br>
-                Between 2021 to 2024, I worked as a Researcher and Deep Learning Algorithm Developer in  
-                <a href="https://www.linkedin.com/company/cisscom/">Cisscom</a> (United States),
-                <a href="https://www.linkedin.com/company/kaleidosoft/">KaleidoSoft</a> (Croatia) and 
-                <a href="https://www.vinacts.com/">Vinacts</a> (South Korea).
-
-                I have collaborated with core engineers in 
-                <a href="https://www.hyundai.com/worldwide/en">Hyundai</a> and 
-                <a href="https://www.volvocars.com/intl/v/cars/concept-models/360c">Volvo 360c Self-Driving Car</a> 
-                projects and in
-                <a href="https://www.samsung.com/us/">Samsung</a> for computer vision algorithms 
-                for <a href="https://www.samsung.com/bd/smartphones/galaxy-s24-ultra/">S24 Ultra</a> release features.
-
-                <br><br>
-                In 2025, during my days in the academia, I remotely worked on a complex 4D CTP data enabled 
-                Medical Image Synthesis project under the supervision of 
-                <a href="https://marafathussain.github.io/">Dr. Mohammad Arafat Hussain</a>, 
-                who is a Postdoctoral Research Fellow
-                at the <a href="https://hms.harvard.edu/">Harvard Medical School</a>.
-              </p>
-                           
-              
-              <p style="text-align:center">
-                <a href="mailto:sheekar.banerjee@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=TpLbmAcAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-                <a href="Sheekar_CV_Academy.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/sheekar-banerjee-6b189b12a/">LinkedIn</a> &nbsp/&nbsp
-                <br>
-                <a href="https://github.com/ac005sheekar">Github</a> &nbsp/&nbsp
-                <a href="https://projecthub.arduino.cc/sheekar">Arduino Project Hub</a> &nbsp/&nbsp
-                <a href="https://www.youtube.com/@sheekarbanerjee">YouTube</a> &nbsp/&nbsp
-                <a href="https://soundcloud.com/sheekar-banerjee">SoundCloud Music</a>
-              </p>
-            </td>
-            <td style="padding:1.5%;width:30%;max-width:40%">
-              <a href="sheek.png"><img style="width:100%;max-width:100%" alt="profile photo" src="sheek.png" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- GIF Section -->
-        <div class="gif-background">
-          <!-- Optional: You can add text over the GIF if needed -->
-          <!-- <h3>Work Life at Vinacts</h3> -->
-        </div>
-        
-        <!-- Additional Images Section -->
-        
-        <div class="additional-images-container">
-          <div class="additional-image">
-            <div class="additional-image-container">
-              <!-- Replace with your actual image 1 -->
-              <img src="jung.jpg">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sheekar Banerjee</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teach.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="leader.html">Competitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="workshops.html">Workshops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="culture.html">Culture</a>
+                    </li>
+                </ul>
             </div>
-            
-          </div>
-          
-          <div class="additional-image">
-            <div class="additional-image-container">
-              <!-- Replace with your actual image 2 -->
-              <img src="Morning Scrum3.png">
-            </div>
-            
-          </div>
         </div>
-        
-       
-        
+    </nav>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr> <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>News</heading>
-            <ul>
-                <li> [Nov'25] A review paper on Computer Vision and Artificial Intelligence in Dental Implant Surgery got ACCEPTED in the [<a href="https://link.springer.com/journal/11701">Journal of Robotic Surgery</a>], Q1, IF: 3.0<br>
-                <li> [Oct'24] Got appointed as a Lecturer in the Department of Computer Science and 
-                  Engineering, IUBAT, Dhaka, Bangladesh <br>
-                <li> [March'24] Got offer for PhD in Computer Science from the University of Delaware, USA. <br>
-                <li> [Feb'24] The paper on Breast Cancer Detection with Eff-Net-V1-V2 got published in Springer Nature, Switzerland! [<a href="https://link.springer.com/chapter/10.1007/978-3-031-53717-2_30">Paper Link</a>].<br>
-                
-            </ul>
-          </td> </tr>
-        </tbody></table>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1>Sheekar Banerjee</h1>
+                    <h4>Computer Science Researcher & Lecturer</h4>
+                    <p class="lead">Prospective MSc/PhD candidate with industry research experience in computer vision and deep learning</p>
+                    <div class="mt-4">
+                        <a href="Sheekar_CV_Academy.pdf" class="btn btn-light btn-lg mr-3">Download CV</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="sheek.png" alt="Sheekar Banerjee" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>I am a prospective graduate student of Computer Science. Currently, I am working as a Lecturer at the Department of Computer Science and Engineering at <a href="https://iubat.edu/">IUBAT</a>, Dhaka, Bangladesh.</p>
+                            
+                            <p>I completed my BSc in Computer Science and Engineering from <a href="https://iubat.edu/">IUBAT</a> in 2020. Between 2021 to 2024, I worked as a Researcher and Deep Learning Algorithm Developer in <a href="https://www.linkedin.com/company/cisscom/">Cisscom</a> (United States), <a href="https://www.linkedin.com/company/kaleidosoft/">KaleidoSoft</a> (Croatia) and <a href="https://www.vinacts.com/">Vinacts</a> (South Korea).</p>
+                            
+                            <p>I have collaborated with core engineers in <a href="https://www.hyundai.com/worldwide/en">Hyundai</a> and <a href="https://www.volvocars.com/intl/v/cars/concept-models/360c">Volvo 360c Self-Driving Car</a> projects and in <a href="https://www.samsung.com/us/">Samsung</a> for computer vision algorithms for <a href="https://www.samsung.com/bd/smartphones/galaxy-s24-ultra/">S24 Ultra</a> release features.</p>
+                            
+                            <p>In 2025, during my days in the academia, I remotely worked on a complex 4D CTP data enabled Medical Image Synthesis project under the supervision of <a href="https://marafathussain.github.io/">Dr. Mohammad Arafat Hussain</a>, who is a Postdoctoral Research Fellow at the <a href="https://hms.harvard.edu/">Harvard Medical School</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Work Experience Gallery -->
+    <section id="work" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">A glimps of my diverse experience in the AI Industry</h2>
+            <div class="work-gallery">
+                <div class="work-item">
+                    <img src="Worklifevinacts.gif" alt="Work at Vinacts">
+                </div>
+                <div class="work-item">
+                    <img src="jung.jpg" alt="Work Environment">
+                </div>
+                <div class="work-item">
+                    <img src="Morning Scrum3.png" alt="Team Collaboration">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr> <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Media Appearances</heading>
-              <ul>
-                  <li> [Jan'20] IUBAT secures runner-up at Mujib Year IT Carnival 2020. <a href="https://dailyasianage.com/news/215938/iubat-secures-runner-up-at-mujib-year-it-carnival">The Daily Asian Age</a>. <br>
-                  <li> [Oct'19] IUBAT SENSO CODER of IUBAT CSE Robotics Club (Wing of IITS) becomes First Runner Up at JU CSE Fest'19. <a href="https://iubat.edu/iubat-senso-coder-of-iubat-cse-robotics-club-wing-of-iits/">IUBAT News</a>.<br>
-                  
-              </ul>
-            </td> </tr>
-        </tbody></table>
+    <!-- News Section -->
+    <section id="news" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Recent News</h2>
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-newspaper mr-2"></i>Latest Updates
+                </div>
+                <div class="card-body">
+                    <div class="news-item">
+                        <span class="badge badge-accent">Nov 2025</span>
+                        <p>A review paper on Computer Vision and Artificial Intelligence in Dental Implant Surgery got ACCEPTED in the <a href="https://link.springer.com/journal/11701">Journal of Robotic Surgery</a>, Q1, IF: 3.0</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="badge badge-accent">Oct 2024</span>
+                        <p>Got appointed as a Lecturer in the Department of Computer Science and Engineering, IUBAT, Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="badge badge-accent">March 2024</span>
+                        <p>Received offer for PhD in Computer Science from the University of Delaware, USA</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="badge badge-accent">Feb 2024</span>
+                        <p>The paper on Breast Cancer Detection with Eff-Net-V1-V2 got published in Springer Nature, Switzerland! <a href="https://link.springer.com/chapter/10.1007/978-3-031-53717-2_30">Paper Link</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr> <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Awards</heading>
-            <ul>
-                <li> [Dec'21] <strong>Best Paper Award</strong> from International Conference of Machine Intelligence and Data Science
-                  Applications (MIDAS'21) by Springer <a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view">[Link]</a>. <br>
-                <li> [Jan'20] <strong>Runner-Up</strong> at National Tech Idea Contest at Mujib Borsho IT Carnival, held in Dhaka Inter-
-                  national University (ranked 2 out of 17 selected top projects) <a href="https://drive.google.com/file/d/1Vibv-SxYKK-0OhzBcl_jWyuvd7ZO-RXN/view">[Link]</a>.<br>
-                <li> [Oct'19] <strong>First Runners-Up</strong> at National Tech Idea Competition, JU CSE Fest'19, held in Jahangirnagar
-                  University (ranked 2 out of 11 selected top projects) <a href="https://drive.google.com/file/d/1DHtZPP1uf2qLoy5mS9z5_J5cyAKi6d4T/view?usp=sharing">[Link]</a>.<br>
-                <li> [Oct'19] <strong>Second Runners-Up</strong> at Innovation Competition'19, powered by iLab innovation, Bangladesh
-                  ICT Ministry, held in IUBAT (ranked 3 out of 21 selected top projects) <a href="https://drive.google.com/file/d/133qHKX_NpSGsSbDtSwPhzJK55tuoDlP4/view">[Link]</a>.<br>
-                <li> [Mar'18] <strong>Vice Chancellor's Award</strong> for Academic Excellence, IUBAT (Top 1% in the whole University) <a href="https://drive.google.com/file/d/1pm5y8tw0-g0YH8Q1ja8sXlwi5EwdCKe2/view">[Link]</a>.<br>
-                <li> [Dec'16] <strong>Chair's Award</strong> for Academic Excellence, IUBAT (Topper in the class of 236 Students) <a href="https://drive.google.com/file/d/1g49dIrXbE9kWVNwdjry8PwOPwyI6uwS8/view">[Link]</a>.<br>
-            </ul>
-          </td> </tr>
-      </tbody></table>
+    <!-- Media Appearances -->
+    <section id="media" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Media Appearances</h2>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="media mb-3">
+                            <i class="fas fa-newspaper fa-2x text-accent mr-3"></i>
+                            <div class="media-body">
+                                <h5 class="mt-0">IUBAT secures runner-up at Mujib Year IT Carnival 2020</h5>
+                                <p><a href="https://dailyasianage.com/news/215938/iubat-secures-runner-up-at-mujib-year-it-carnival">The Daily Asian Age</a> - January 2020</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-university fa-2x text-accent mr-3"></i>
+                            <div class="media-body">
+                                <h5 class="mt-0">IUBAT SENSO CODER becomes First Runner Up at JU CSE Fest'19</h5>
+                                <p><a href="https://iubat.edu/iubat-senso-coder-of-iubat-cse-robotics-club-wing-of-iits/">IUBAT News</a> - October 2019</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr> <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Voluntary Involvement</heading>
-            <ul>
-                <li> <strong>Peer Reviewer</strong>: <a href="https://www.springer.com/journal/521">Neural Computing and Applications</a>, <a href="https://www.springer.com/journal/42979">Springer-Nature Computer Science</a> . [Feb 2023 - Present]
-                <li> <strong>Honorable Judge</strong>: Crisis Computerized at Sunnydale Math and Tech Fest'23</a> at <a href="https://sunnydale.edu.bd/">Sunnydale School</a>. [Feb 2023]
-                <li> <strong>Member</strong>: <a href="https://www.iaeng.org/">International Association of Engineers (IAENG), Hong Kong</a>. [April 2020-Present]
-                <li> <strong>Organizer</strong>: <a href="https://cse.iubat.edu/seminar-on-artificial-intelligence-and-machine-learning/">Seminar on Artificial Intelligence and Machine Learning (NCPC'18)</a>. [July 2018]
-                <li> <strong>Organizer</strong>: IUBAT University Robotics Contest (Robolion'17). [September 2017]
-                <li> <strong>Math-Physics Tutor</strong>: Underprivileged Student Education Program. [February 2017-June 2017]
-                <li> <strong>Playwright</strong>: Bhaktivedanta Academy of Cultural Education. [August 2016-January 2017]
-            </ul>
-          </td> </tr>
-      </tbody></table>
+    <!-- Awards Section -->
+    <section id="awards" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Awards & Honors</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="award-item">
+                        <h5>Best Paper Award</h5>
+                        <p><span class="badge badge-accent">Dec 2021</span> International Conference of Machine Intelligence and Data Science Applications (MIDAS'21) by Springer <a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view">[Link]</a></p>
+                    </div>
+                    <div class="award-item">
+                        <h5>Runner-Up at National Tech Idea Contest</h5>
+                        <p><span class="badge badge-accent">Jan 2020</span> Mujib Borsho IT Carnival, Dhaka International University (ranked 2 out of 17 selected top projects) <a href="https://drive.google.com/file/d/1Vibv-SxYKK-0OhzBcl_jWyuvd7ZO-RXN/view">[Link]</a></p>
+                    </div>
+                    <div class="award-item">
+                        <h5>First Runners-Up at National Tech Idea Competition</h5>
+                        <p><span class="badge badge-accent">Oct 2019</span> JU CSE Fest'19, Jahangirnagar University (ranked 2 out of 11 selected top projects) <a href="https://drive.google.com/file/d/1DHtZPP1uf2qLoy5mS9z5_J5cyAKi6d4T/view?usp=sharing">[Link]</a></p>
+                    </div>
+                    <div class="award-item">
+                        <h5>Second Runners-Up at Innovation Competition'19</h5>
+                        <p><span class="badge badge-accent">Oct 2019</span> Powered by iLab innovation, Bangladesh ICT Ministry, held in IUBAT (ranked 3 out of 21 selected top projects) <a href="https://drive.google.com/file/d/133qHKX_NpSGsSbDtSwPhzJK55tuoDlP4/view">[Link]</a></p>
+                    </div>
+                    <div class="award-item">
+                        <h5>Vice Chancellor's Award for Academic Excellence</h5>
+                        <p><span class="badge badge-accent">Mar 2018</span> IUBAT (Top 1% in the whole University) <a href="https://drive.google.com/file/d/1pm5y8tw0-g0YH8Q1ja8sXlwi5EwdCKe2/view">[Link]</a></p>
+                    </div>
+                    <div class="award-item">
+                        <h5>Chair's Award for Academic Excellence</h5>
+                        <p><span class="badge badge-accent">Dec 2016</span> IUBAT (Topper in the class of 236 Students) <a href="https://drive.google.com/file/d/1g49dIrXbE9kWVNwdjry8PwOPwyI6uwS8/view">[Link]</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        
-      </td>
-    </tr>
-  </table>
+    <!-- Voluntary Involvement -->
+    <section id="volunteer" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Voluntary Involvement</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="volunteer-item">
+                        <h5>Peer Reviewer</h5>
+                        <p><a href="https://www.springer.com/journal/521">Neural Computing and Applications</a>, <a href="https://www.springer.com/journal/42979">Springer-Nature Computer Science</a> [Feb 2023 - Present]</p>
+                    </div>
+                    <div class="volunteer-item">
+                        <h5>Honorable Judge</h5>
+                        <p>Crisis Computerized at Sunnydale Math and Tech Fest'23 at <a href="https://sunnydale.edu.bd/">Sunnydale School</a> [Feb 2023]</p>
+                    </div>
+                    <div class="volunteer-item">
+                        <h5>Member</h5>
+                        <p><a href="https://www.iaeng.org/">International Association of Engineers (IAENG), Hong Kong</a> [April 2020-Present]</p>
+                    </div>
+                    <div class="volunteer-item">
+                        <h5>Organizer</h5>
+                        <p><a href="https://cse.iubat.edu/seminar-on-artificial-intelligence-and-machine-learning/">Seminar on Artificial Intelligence and Machine Learning (NCPC'18)</a> [July 2018]</p>
+                    </div>
+                    <div class="volunteer-item">
+                        <h5>Organizer</h5>
+                        <p>IUBAT University Robotics Contest (Robolion'17) [September 2017]</p>
+                    </div>
+                    <div class="volunteer-item">
+                        <h5>Math-Physics Tutor</h5>
+                        <p>Underprivileged Student Education Program [February 2017-June 2017]</p>
+                    </div>
+                    <div class="volunteer-item">
+                        <h5>Playwright</h5>
+                        <p>Bhaktivedanta Academy of Cultural Education [August 2016-January 2017]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Contact & Connect</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p class="lead">Feel free to reach out for collaborations or inquiries</p>
+                    <div class="social-links mt-4">
+                        <a href="mailto:sheekar.banerjee@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=TpLbmAcAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="Sheekar_CV_Academy.pdf" title="CV"><i class="fas fa-file-pdf"></i></a>
+                        <a href="https://www.linkedin.com/in/sheekar-banerjee-6b189b12a/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/ac005sheekar" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://projecthub.arduino.cc/sheekar" title="Arduino"><i class="fas fa-microchip"></i></a>
+                        <a href="https://www.youtube.com/@sheekarbanerjee" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://soundcloud.com/sheekar-banerjee" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Sheekar Banerjee. All Rights Reserved.</p>
+            <p>Designed for PhD Admissions</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
