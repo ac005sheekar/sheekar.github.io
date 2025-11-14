@@ -1,127 +1,822 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops - Sheekar Banerjee | Academic Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="sheekar2.jpg">
 
-  <title>Workshops - Sheekar Banerjee</title>
-  
-  <meta name="author" content="Sheekar Banerjee">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="icon" type="image/png" href="sheekar2.jpg">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
 
-  
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--secondary) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .active {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 76px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-section h1, 
+        .hero-section h4, 
+        .hero-section p, 
+        .hero-section .lead {
+            color: white !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .workshops-intro {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .workshops-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0;
+        }
+
+        .workshop-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 40px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .workshop-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .workshop-title {
+            color: white;  
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .workshop-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .organization-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .nasa-badge {
+            background: #e53e3e;
+        }
+
+        .microsoft-badge {
+            background: #0078d4;
+        }
+
+        .workshop-body {
+            padding: 30px;
+        }
+
+        .workshop-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .workshop-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .workshop-image:hover {
+            transform: scale(1.03);
+        }
+
+        .workshop-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            font-size: 0.8rem;
+            text-align: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .workshop-image:hover .image-caption {
+            opacity: 1;
+        }
+
+        .workshop-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .learning-section {
+            background: rgba(49, 130, 206, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .learning-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tech-tag {
+            background: rgba(49, 130, 206, 0.1);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(49, 130, 206, 0.2);
+        }
+
+        .team-section {
+            background: rgba(221, 107, 32, 0.05);
+            border-left: 4px solid #dd6b20;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .team-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .impact-section {
+            background: rgba(56, 161, 105, 0.05);
+            border-left: 4px solid #38a169;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .impact-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .certificate-section {
+            background: rgba(128, 90, 213, 0.05);
+            border-left: 4px solid #805ad5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .certificate-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .certificate-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 20px;
+            border-radius: 6px;
+            background: rgba(49, 130, 206, 0.1);
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .certificate-link:hover {
+            color: var(--primary);
+            text-decoration: none;
+            transform: translateY(-2px);
+            background: rgba(49, 130, 206, 0.2);
+        }
+
+        .certificate-link i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            
+            .workshop-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .workshop-image-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workshop-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        /* Animation for workshop cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .workshop-card {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
+</head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="index.html">Home</a>
-    
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="research.html">Research</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="projects.html">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="teach.html">Teaching</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="leader.html">Competitions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="workshops.html">Workshops</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="culture.html">Culture</a>
-      </li>
-    </ul>
-  </nav><br>
-  
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sheekar Banerjee</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teach.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="leader.html">Competitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="workshops.html">Workshops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="culture.html">Culture</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-              <heading><strong>I attended some ambitious workshops during my undergrad which included 
-                the direct affiliation of NASA and Microsoft.
-              </strong></heading><br><br>
-              
-            </td>
-            </tr>
-            <tr>
-              <td>
-                <h2><em>Rocket Design Principle, NASA Solve-Young Scientist Meetup, City University, Dhaka, Bangladesh (2019)</em></h2>
-                <img src="nasa2.jpg" alt="nasa" style="width:400px;height:300px;">
-                <img src="nasa3.jpg" alt="nasa" style="width:600px;height:300px;">
-                <br><br>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h1>Workshops & Professional Development</h1>
+                    <p class="lead">Learning from global technology leaders and expanding technical expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                The NASA Solve-Bangladesh Chapter arranged a "Young Scientist Meetup" at the City University in 
-                2019. I attended consecutively two workshops in that event. They were: "Astronaut Workshop" and 
-                "Rocket Design Principle - Basic". My purpose behind doing those workshops were to find out the problems 
-                inside the ongoing space technology and solve them with some better technology. At that time, I was 
-                a core practitioner of Robotics. My intention was to find out the space related problems which I 
-                could solve with robotics.
-                
-                <br><br><br>
-                  
-              </td>
-            </tr>
+    <!-- Workshops Introduction -->
+    <section class="py-5">
+        <div class="container">
+            <div class="workshops-intro" data-aos="fade-up">
+                <p>
+                    I attended ambitious workshops during my undergraduate studies with direct affiliation to 
+                    global technology leaders like NASA and Microsoft. These experiences expanded my technical 
+                    horizons and provided insights into cutting-edge technologies.
+                </p>
+            </div>
 
+            <!-- Workshop Stats -->
+            <div class="row text-center mb-5">
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item">
+                        <span class="stat-number">NASA</span>
+                        <span class="stat-label">Affiliation</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item">
+                        <span class="stat-number">Microsoft</span>
+                        <span class="stat-label">Partnership</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Certificates</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-item">
+                        <span class="stat-number">2019</span>
+                        <span class="stat-label">Active Year</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <tr>
-                <td>
-                  <h2><em>Cloud Camp (Azure), Microsoft Student Partners, Jahangirnagar University (2019)</em></h2>
-                  <img src="jclo1.jpg" alt="ju" style="width:500px;height:400px;">
-                  <img src="jclo2.jpg" alt="ju" style="width:500px;height:400px;">
-                  
-                  <br><br>
-  
-                  In 19 October 2019, I led my undergrad university team to attend the Cloud Camp (Azure) in 
-                  Jahangirnagar University. That camp was arranged by the Microsoft Student Partners- Bangladesh Chapter. 
-                  I was very enthusiastic to learn about the cloud architecture and networking components of 
-                  Azure inside out. So I hopped into the camp and took 7 more junior students with me. 
-                  We learnt about the Azure services for web and mobile application development, cloud operations, 
-                  blockchain, Internet of Things (IoT) and Machine Learning ToolKits. It was a great time indeed! 
-                  
-                  <br><br><br>
+    <!-- Workshops Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Workshop Experiences</h2>
+            
+            <!-- NASA Workshop -->
+            <div class="workshop-card" data-aos="fade-up">
+                <div class="workshop-header">
+                    <div>
+                        <h3 class="workshop-title">NASA Young Scientist Meetup</h3>
+                        <p class="workshop-subtitle">Rocket Design Principles & Astronaut Workshop</p>
+                    </div>
+                    <div class="organization-badge nasa-badge">NASA Solve Bangladesh</div>
+                </div>
+                <div class="workshop-body">
+                    <div class="workshop-image-grid">
+                        <div class="workshop-image">
+                            <img src="nasa2.jpg" alt="NASA Workshop">
+                            <div class="image-caption">NASA Solve Young Scientist Meetup</div>
+                        </div>
+                        <div class="workshop-image">
+                            <img src="nasa3.jpg" alt="Rocket Design">
+                            <div class="image-caption">Rocket Design Principles Workshop</div>
+                        </div>
+                    </div>
                     
-                </td>
-              </tr>
+                    <p>
+                        The NASA Solve-Bangladesh Chapter arranged a "Young Scientist Meetup" at City University in 2019. 
+                        I attended two consecutive workshops in this event: "Astronaut Workshop" and "Rocket Design Principles - Basic". 
+                        My purpose was to identify problems in ongoing space technology and explore solutions using robotics expertise.
+                    </p>
+                    
+                    <div class="workshop-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Workshops</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Space Tech</span>
+                            <span class="stat-label">Focus Area</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Robotics</span>
+                            <span class="stat-label">Application</span>
+                        </div>
+                    </div>
+                    
+                    <div class="learning-section">
+                        <div class="learning-title">Key Learning Objectives</div>
+                        <p>
+                            My primary goal was to bridge my robotics expertise with space technology challenges. 
+                            I aimed to understand current limitations in space exploration and identify opportunities 
+                            where robotic systems could provide innovative solutions for NASA's mission objectives.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Rocket Design</span>
+                            <span class="tech-tag">Space Technology</span>
+                            <span class="tech-tag">Astronaut Training</span>
+                            <span class="tech-tag">Problem Solving</span>
+                            <span class="tech-tag">Robotics Integration</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-section">
+                        <div class="certificate-title">Workshop Certification</div>
+                        <p>Successfully completed the NASA Young Scientist Meetup workshops and received certification for participation and learning achievements.</p>
+                        <a href="https://drive.google.com/file/d/1mrU7G23SOUhMCzYkCKHqz7RWs3omz2M8/view?usp=sharing" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View NASA Workshop Certificate
+                        </a>
+                    </div>
+                    
+                    <div class="impact-section">
+                        <div class="impact-title">Strategic Impact</div>
+                        <p>
+                            This workshop provided crucial insights into how robotics could be applied to solve 
+                            complex challenges in space exploration. It helped me understand the intersection 
+                            between terrestrial robotics research and extraterrestrial applications, inspiring 
+                            new approaches to technical problem-solving.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Microsoft Workshop -->
+            <div class="workshop-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="workshop-header">
+                    <div>
+                        <h3 class="workshop-title">Microsoft Azure Cloud Camp</h3>
+                        <p class="workshop-subtitle">Cloud Architecture & Development Workshop</p>
+                    </div>
+                    <div class="organization-badge microsoft-badge">Microsoft Student Partners</div>
+                </div>
+                <div class="workshop-body">
+                    <div class="workshop-image-grid">
+                        <div class="workshop-image">
+                            <img src="jclo1.jpg" alt="Microsoft Workshop">
+                            <div class="image-caption">Microsoft Azure Cloud Camp</div>
+                        </div>
+                        <div class="workshop-image">
+                            <img src="jclo2.jpg" alt="Cloud Architecture">
+                            <div class="image-caption">Cloud Development Session</div>
+                        </div>
+                    </div>
+                    
+                    <p>
+                        On October 19, 2019, I led my undergraduate university team to attend the Cloud Camp (Azure) 
+                        at Jahangirnagar University. This camp was arranged by Microsoft Student Partners - Bangladesh Chapter. 
+                        I was enthusiastic to learn about Azure cloud architecture and networking components in depth.
+                    </p>
+                    
+                    <div class="workshop-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Team Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Azure</span>
+                            <span class="stat-label">Platform</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Full Day</span>
+                            <span class="stat-label">Workshop</span>
+                        </div>
+                    </div>
+                    
+                    <div class="learning-section">
+                        <div class="learning-title">Technical Skills Acquired</div>
+                        <p>
+                            We learned comprehensive Azure services including web and mobile application development, 
+                            cloud operations, blockchain technology, Internet of Things (IoT) integration, and 
+                            Machine Learning ToolKits. The workshop provided hands-on experience with enterprise-level 
+                            cloud solutions.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Azure Services</span>
+                            <span class="tech-tag">Cloud Architecture</span>
+                            <span class="tech-tag">IoT Integration</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Blockchain</span>
+                            <span class="tech-tag">Web Development</span>
+                            <span class="tech-tag">Mobile Development</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-section">
+                        <div class="certificate-title">Workshop Certification</div>
+                        <p>Successfully completed the Microsoft Azure Cloud Camp and received certification for comprehensive cloud computing training.</p>
+                        <a href="https://drive.google.com/file/d/1TKV8vkCN_6FJtWqXzH3lvvfizocvFKKj/view?usp=sharing" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Microsoft Cloud Camp Certificate
+                        </a>
+                    </div>
+                    
+                    <div class="team-section">
+                        <div class="team-title">Leadership Role</div>
+                        <p>
+                            As team leader, I organized and motivated 7 junior students to participate in this 
+                            valuable learning opportunity. This demonstrated my commitment to knowledge sharing 
+                            and team development within our academic community.
+                        </p>
+                        <div class="team-members">
+                            <span class="team-member">Sheekar Banerjee (Team Lead)</span>
+                            <span class="team-member">7 Junior Students</span>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-section">
+                        <div class="impact-title">Career Impact</div>
+                        <p>
+                            This workshop significantly enhanced my understanding of cloud computing architectures 
+                            and their applications in modern software development. The knowledge gained has been 
+                            instrumental in my subsequent research and project work involving distributed systems 
+                            and scalable applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Additional Learning Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Continuous Learning Philosophy</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="workshop-card">
+                        <div class="workshop-body text-center">
+                            <h3>Bridging Industry Knowledge with Academic Research</h3>
+                            <p class="lead">
+                                These workshops with global technology leaders demonstrate my commitment to continuous 
+                                learning and bridging the gap between industry practices and academic research.
+                            </p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="learning-section">
+                                        <div class="learning-title">NASA Workshop Impact</div>
+                                        <p>
+                                            Provided insights into how robotics research could address challenges in 
+                                            space exploration and advanced technology development.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="learning-section">
+                                        <div class="learning-title">Microsoft Workshop Impact</div>
+                                        <p>
+                                            Enhanced understanding of cloud computing architectures that later influenced 
+                                            my research in distributed systems and scalable AI applications.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="certificate-section mt-4">
+                                <div class="certificate-title">Verified Certifications</div>
+                                <p>
+                                    Both workshops resulted in official certifications from globally recognized organizations, 
+                                    validating the knowledge and skills acquired during these professional development experiences.
+                                </p>
+                                <div class="d-flex justify-content-center flex-wrap gap-3">
+                                    <a href="https://drive.google.com/file/d/1mrU7G23SOUhMCzYkCKHqz7RWs3omz2M8/view?usp=sharing" class="certificate-link" target="_blank">
+                                        <i class="fas fa-certificate"></i> NASA Certificate
+                                    </a>
+                                    <a href="https://drive.google.com/file/d/1TKV8vkCN_6FJtWqXzH3lvvfizocvFKKj/view?usp=sharing" class="certificate-link" target="_blank">
+                                        <i class="fas fa-certificate"></i> Microsoft Certificate
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-              
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Interested in Technical Workshops?</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p class="lead">Let's discuss workshop organization, technical training, or professional development opportunities</p>
+                    <div class="social-links mt-4">
+                        <a href="mailto:sheekar.banerjee@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=TpLbmAcAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="Sheekar_CV_Academy.pdf" title="CV"><i class="fas fa-file-pdf"></i></a>
+                        <a href="https://www.linkedin.com/in/sheekar-banerjee-6b189b12a/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/ac005sheekar" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://projecthub.arduino.cc/sheekar" title="Arduino"><i class="fas fa-microchip"></i></a>
+                        <a href="https://www.youtube.com/@sheekarbanerjee" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://soundcloud.com/sheekar-banerjee" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Sheekar Banerjee. All Rights Reserved.</p>
+            <p>Designed for PhD Admissions</p>
+        </div>
+    </footer>
 
-
-
-
-
-
-            <br><br><br>
-            
-            
-
-
-        
-
-
-
-<br><br>
-            
-
-
-            
-        </table>
-
-        
-      
-      </td>
-    </tr>
-  </table>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
-
 </html>
