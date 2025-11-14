@@ -1,241 +1,707 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sheekar Banerjee | Academic Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="sheekar2.jpg">
 
-  <title>Projects - Sheekar Banerjee</title>
-  
-  <meta name="author" content="Sheekar Banerjee">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="icon" type="image/png" href="sheekar2.jpg">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--secondary) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .active {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 76px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-section h1, 
+        .hero-section h4, 
+        .hero-section p, 
+        .hero-section .lead {
+            color: white !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .project-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 30px;
+            overflow: hidden;
+            background: white;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .project-year {
+            font-weight: 600;
+        }
+
+        .project-supervisor {
+            font-style: italic;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(49, 130, 206, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--primary);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .project-link i {
+            margin-right: 5px;
+        }
+
+        .confidential-badge {
+            background: #e53e3e;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--border);
+            color: var(--text);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .project-counter {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .counter-number {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            
+            .filter-buttons {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+        }
+
+        /* Animation for project cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="index.html">Home</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sheekar Banerjee</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teach.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="leader.html">Competitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="workshops.html">Workshops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="culture.html">Culture</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h1>Technical Projects</h1>
+                    <p class="lead">Showcasing innovative applications of computer vision, AI, and robotics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Counter -->
+    <section class="project-counter">
+        <div class="container">
+            <p>Displaying <span class="counter-number">6</span> innovative projects spanning computer vision, AI, and robotics</p>
+        </div>
+    </section>
+
+    <!-- Project Filters -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="computer-vision">Computer Vision</button>
+                <button class="filter-btn" data-filter="ai-ml">AI & Machine Learning</button>
+                <button class="filter-btn" data-filter="robotics">Robotics</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <div class="row" id="projects-container">
+                
+                <!-- Project 1 -->
+                <div class="col-lg-6 mb-4" data-category="computer-vision robotics">
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="pose.JPG" alt="Multiple Person Pose Estimation">
+                            <div class="project-badge confidential-badge">Confidential</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Multiple Person Pose Estimation for Robot Vision</h3>
+                            <div class="project-meta">
+                                <span class="project-year">2023</span>
+                                <span class="project-supervisor">Geunseong Kim, Vinacts</span>
+                            </div>
+                            <p class="project-description">
+                                Developed real-time pose estimation and keypoint tracking system for a confidential South Korean project. 
+                                Implemented YOLOv5 for pose estimation with socket programming to stream landmark data to TCP server.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">YOLOv5</span>
+                                <span class="tech-tag">Socket Programming</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">TCP Server</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://youtu.be/PdYfGs-6CJM" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Single Person Demo
+                                </a>
+                                <a href="https://youtu.be/sA4SLYT__oc" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Multiple Person Demo
+                                </a>
+                                <a href="https://github.com/ac005sheekar/Multipose-yolov5-tcp" class="project-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-6 mb-4" data-category="computer-vision robotics">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="recog2.JPG" alt="Object Recognition for Robot Vision">
+                            <div class="project-badge confidential-badge">Confidential</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Object Recognition for Robot Vision & Unreal Engine</h3>
+                            <div class="project-meta">
+                                <span class="project-year">2023</span>
+                                <span class="project-supervisor">Geunseong Kim, Vinacts</span>
+                            </div>
+                            <p class="project-description">
+                                Built real-time object recognition system streaming data to Unreal Engine 5 via TCP server. 
+                                Implemented YOLOv7 for continuous object tracking in a confidential South Korean robotics project.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">YOLOv7</span>
+                                <span class="tech-tag">Unreal Engine 5</span>
+                                <span class="tech-tag">Socket Programming</span>
+                                <span class="tech-tag">Computer Vision</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://youtu.be/jUR3j4k-UaM" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Demo 1
+                                </a>
+                                <a href="https://youtu.be/Egah9hEqD1I" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Demo 2
+                                </a>
+                                <a href="https://github.com/ac005sheekar/YOLO-V7-TCP-Server-Socket-Programming" class="project-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-lg-6 mb-4" data-category="computer-vision ai-ml">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="facedis.PNG" alt="Face Distance Measurement">
+                            <div class="project-badge confidential-badge">Confidential</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Face Distance Measurement for AI Digital Human</h3>
+                            <div class="project-meta">
+                                <span class="project-year">2023</span>
+                                <span class="project-supervisor">Geunseong Kim, Vinacts</span>
+                            </div>
+                            <p class="project-description">
+                                Developed face distance measurement system for AI digital human greetings feature. 
+                                Implemented OpenCV-based solution with Flask and TCP server integration for Unreal Engine 5 environment.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Socket Programming</span>
+                                <span class="tech-tag">AI Digital Human</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://youtu.be/68SmZxU9GW4" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Demo 1
+                                </a>
+                                <a href="https://youtu.be/5BAI8DyfecM" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Demo 2
+                                </a>
+                                <a href="https://github.com/ac005sheekar/Face-Distance-OpenCV-TCP-Server-Socket-Programming" class="project-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-lg-6 mb-4" data-category="ai-ml healthcare">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="alz.PNG" alt="Alzheimer's Disease Detection">
+                            <div class="project-badge">Healthcare</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Alzheimer's Disease Stage Detection Android App</h3>
+                            <div class="project-meta">
+                                <span class="project-year">2022</span>
+                                <span class="project-supervisor">Petar Janicic, KaleidoSoft</span>
+                            </div>
+                            <p class="project-description">
+                                Created Android application for Alzheimer's disease stage detection from brain X-ray images. 
+                                Implemented TensorFlow deep learning model converted to TFLite for mobile deployment.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Android</span>
+                                <span class="tech-tag">TFLite</span>
+                                <span class="tech-tag">Deep Learning</span>
+                                <span class="tech-tag">Medical AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/watch?v=ocCYdEAt0do" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Demo
+                                </a>
+                                <a href="https://github.com/ac005sheekar/Alzheimer-s-Disease-Stage-Detection-with-Deep-Learning-in-Android-App" class="project-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-lg-6 mb-4" data-category="ai-ml">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="testjet.PNG" alt="TestJet AI">
+                            <div class="project-badge">AI Testing</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">TestJet AI - Self-Healing Test Automation</h3>
+                            <div class="project-meta">
+                                <span class="project-year">2021-2022</span>
+                                <span class="project-supervisor">Yameen Ahmad, Cisscom LLC</span>
+                            </div>
+                            <p class="project-description">
+                                Developed AI-powered self-healing test automation system for Mazda-USA. 
+                                Implemented computer vision-based image comparison and OCR testing with Django REST framework and MEVN stack.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">MEVN Stack</span>
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">OCR</span>
+                                <span class="tech-tag">Test Automation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/watch?v=Ms1tVs9lPvU" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-lg-6 mb-4" data-category="robotics healthcare">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                            <img src="vent.jpg" alt="SENSO CODER Ventilator">
+                            <div class="project-badge">COVID-19 Response</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">SENSO CODER Ventilator with Robotic Arm</h3>
+                            <div class="project-meta">
+                                <span class="project-year">2020</span>
+                                <span class="project-supervisor">Prof. Rashedul Islam</span>
+                            </div>
+                            <p class="project-description">
+                                Led design of cost-efficient sensor-based ventilation system with robotic arm approach for COVID-19 patients. 
+                                Featured leakage-free oxygen source, programmed stepper motor, and respiratory sensor integration.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Robotics</span>
+                                <span class="tech-tag">Sensor Integration</span>
+                                <span class="tech-tag">Stepper Motor</span>
+                                <span class="tech-tag">Medical Devices</span>
+                                <span class="tech-tag">COVID-19</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/watch?v=SkW5Gk2bb1A" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Interested in Collaboration?</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p class="lead">Let's discuss how we can work together on innovative projects</p>
+                    <div class="social-links mt-4">
+                        <a href="mailto:sheekar.banerjee@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=TpLbmAcAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="Sheekar_CV_Academy.pdf" title="CV"><i class="fas fa-file-pdf"></i></a>
+                        <a href="https://www.linkedin.com/in/sheekar-banerjee-6b189b12a/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/ac005sheekar" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://projecthub.arduino.cc/sheekar" title="Arduino"><i class="fas fa-microchip"></i></a>
+                        <a href="https://www.youtube.com/@sheekarbanerjee" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://soundcloud.com/sheekar-banerjee" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Sheekar Banerjee. All Rights Reserved.</p>
+            <p>Designed for PhD Admissions</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="research.html">Research</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="projects.html">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="teach.html">Teaching</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="leader.html">Competitions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="workshops.html">Workshops</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="culture.html">Culture</a>
-      </li>
-    </ul>
-  </nav><br>
-  
-      <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading><strong>Projects</strong></heading>
-          </td>
-        </tr>
-      </tbody></table>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
 
-      <!-- Papers list -->
-      <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="pose.JPG" width="160" height="100">
-        </td>
-        <td width="75%" valign="middle">
-          <!-- <a href="video link to be added..."> -->
-            <strong><papertitle>Multiple Person Pose Estimation for Robot Vision and Streaming with Socket Programming to 
-              TCP Server</papertitle> [2023]</strong>
-          </a>
-          <br>
-          Supervised by: Geunseong Kim, Development Head at Vinacts, South Korea <br>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
             
-          <p> This is a very small part of a gigantic confidential South Korean project where 
-            multiple persons' pose estimation and keypoint tracking have been done. The data values of the landmarks
-            have been streamed to the TCP Server through Socket Programming with Python. YOLO version 5 has been used for 
-            pose estimation and tracking. Further improvement has been going on which cannot be shared due to 
-            strict project confidentiality.
-          </p>
-          [<a href="https://youtu.be/PdYfGs-6CJM">Single Person Demo</a>] / 
-          [<a href="https://youtu.be/sA4SLYT__oc">Multiple Person Demo</a>] / 
-          [<a href="https://github.com/ac005sheekar/Multipose-yolov5-tcp">code</a>]
-        </td>
-      </tr> </tbody></table>
-
-<br><br>
-
-
-      <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="recog2.JPG" width="160" height="100">
-        </td>
-        <td width="75%" valign="middle">
-          <!-- <a href="video link to be added..."> -->
-            <strong><papertitle>Cutting Edge Object Recognition for Robot Vision and Data feeding to the Unreal Engine with Socket Programming</papertitle> [2023]</strong>
-              
-          </a>
-          <br>
-          Supervised by: Geunseong Kim, Development Head at Vinacts, South Korea <br>
-            
-          <p> This is a code fragment of another large confidential South Korean project where 
-            multiple object recognition has been done. The object data values 
-            have been streamed to the TCP Server alinged with Unreal Engine 5 environment through Socket Programming 
-            with Python. Here, YOLO version 7 has been used for 
-            continuous object recognition and tracking. Further improvement has been going on which cannot be shared due to 
-            strict project confidentiality.
-          </p>
-          [<a href="https://youtu.be/jUR3j4k-UaM">Demo 1</a>] / 
-          [<a href="https://youtu.be/Egah9hEqD1I">Demo 2</a>] / 
-          [<a href="https://github.com/ac005sheekar/YOLO-V7-TCP-Server-Socket-Programming">code</a>]
-        </td>
-      </tr> </tbody></table>
-
-
-
-<br><br>
-      <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="facedis.PNG" width="160" height="100">
-        </td>
-        <td width="75%" valign="middle">
-          <!-- <a href="video link to be added..."> -->
-            <strong><papertitle>Face Distance Measurement for AI Digital Human's Greetings Feature </papertitle> [2023]</strong>
-          </a>
-          <br>
-          Supervised by: Geunseong Kim, Development Head at Vinacts, South Korea <br>
-            
-          <p> This is a code fragment of a magnanimous confidential South Korean project where 
-            greetings feature has been done with face distance measurement with OpenCV. The distance data values 
-            have been streamed to the Flask and TCP Server alinged with Unreal Engine 5 environment through Socket Programming 
-            with Python. Further improvement has been going on which cannot be shared due to 
-            strict project confidentiality.
-          </p>
-          [<a href="https://youtu.be/68SmZxU9GW4">Demo 1</a>] / 
-          [<a href="https://youtu.be/5BAI8DyfecM">Demo 2</a>] / 
-          [<a href="https://youtu.be/gdhrFTPIeLo">Demo 3</a>] / 
-          [<a href="https://github.com/ac005sheekar/Face-Distance-OpenCV-TCP-Server-Socket-Programming">code</a>]
-        </td>
-      </tr> </tbody></table>
-
-
-<br><br>
-
-        
-
-
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="alz.PNG" width="160" height="100">
-          </td>
-          <td width="75%" valign="middle">
-            <!-- <a href="https://www.youtube.com/watch?v=ocCYdEAt0do"> -->
-              <strong><papertitle>Alzheimer's Disease Stage Detection with Deep Learning in Android App</papertitle> [2022]</strong>
-            </a>
-            <br>
-              Supervised by: <a href="https://www.linkedin.com/in/petar-j-346862208/">Petar Janicic</a>, 
-              CEO of KaleidoSoft (Zagreb, Croatia) <br>
-              
-            <p> This is an Android mobile application prototype where user can upload a Tomographic Brain X-ray image 
-              into the system and get an AI based prediction out of it. The prediction mainly relates to the 
-              stage detection of Alzheimer's disease such as: Demented, Mild Demented, Very Mild Demented and 
-              Non Demented. Here, I implemented the deep learning model with Tensorflow framework, converted the artifact 
-              into Tf-Lite and served it to the Android platform.
-            </p>
-            [<a href="https://www.youtube.com/watch?v=ocCYdEAt0do">Demo</a>] /
-            [<a href="https://github.com/ac005sheekar/Alzheimer-s-Disease-Stage-Detection-with-Deep-Learning-in-Android-App">code</a>]
-          </td>
-        </tr> </tbody></table>
-
-<br><br>
-
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="testjet.PNG" width="160" height="100">
-          </td>
-          <td width="75%" valign="middle">
-            <!-- <a href="https://www.facebook.com/watch/?v=2652088795047266"> -->
-              <strong><papertitle>TestJet AI</papertitle> [2021-2022]</strong>
-            </a>
-            <br>
-              Supervised by: <a href="https://theorg.com/org/bangla-institute/org-chart/yameen-ahmad">Yameen Ahmad</a> 
-              at Titan Technologies (Sister concern of Cisscom LLC, California, USA) <br>
-            <p> TestJet-AI is an AI powered Self-Healing Test Automation System for Mazda-USA within Web and Mobile Platform where I implemented AI- Vision based Image Comparison and OCR Testing capabilities for pixel-by-pixel image verification with Django Rest Framework and core MEVN stack.
-              I also designed the Solution Architecture for self-healing web testing with healenium-python and Django.
-              The beta version of the project has been launch for the users in the market on February 2022 when I was working at Cisscom LLC. Since then it has been gaining rave reviews from the users and software testers.
-
-            </p>
-            <!-- [<a href="https://www.testjet.ai/">Link</a>] -->
-            [<a href="https://www.youtube.com/watch?v=Ms1tVs9lPvU">Demo</a>]
-          </td>
-        </tr> </tbody></table>
-
-
-
-
-
-<br><br>
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="vent.jpg" width="160" height="100">
-          </td>
-          <td width="75%" valign="middle">
-            <!-- <a href="https://www.facebook.com/watch/?v=2652088795047266"> -->
-              <strong><papertitle>SENSO CODER Ventilator Simulation with Robotic Arm Approach for COVID-19 Patients</papertitle> [2020]</strong>
-            </a>
-            <br>
-              Supervised by: <a href="https://cse.iubat.edu/rashedul-islam/">
-                Prof. Rashedul Islam</a> <br>
-            <p> This is a design based simulation project which represents a research proposal of a cost-efficient
-              sensor based ventilation system with Robotic Arm Approach, for COVID-19 patients in the
-              rural area. On the verge of a massive first wave of COVID-19 outbreak at March'20, studying as a final
-              year undergraduate student, I led this simulation project collaborating with three mechanical
-              engineering students at my university.
-              Demonstrated the features of Leakage Free Oxygen Source, Ventilation Bag attached with
-              Robotic Arm with Transverse Angle, Programmed Stepper Motor for real time Frequency Con-
-              trol and Precise Air Diffusion Rate and Respiratory Sensor for reading the Breathing Rate of
-              the patient.
-              Got acclamation from the Professors at my University due to the realistic feasibility of the
-              design.
-            </p>
-            [<a href="https://www.facebook.com/watch/?v=2652088795047266">Demo</a>]
-          </td>
-        </tr> </tbody></table>
-
-<br><br>
-
-        
-
-
-
-
-
-
-
-      
-        
-
-
-        
-      </td>
-    </tr>
-  </table>
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide projects based on filter
+                    projectCards.forEach(card => {
+                        const projectCategory = card.parentElement.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || projectCategory.includes(filterValue)) {
+                            card.parentElement.style.display = 'block';
+                        } else {
+                            card.parentElement.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>
