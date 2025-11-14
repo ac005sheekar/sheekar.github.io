@@ -1,270 +1,1141 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership & Competitions - Sheekar Banerjee | Academic Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="sheekar2.jpg">
 
-  <title>Leadership - Sheekar Banerjee</title>
-  
-  <meta name="author" content="Sheekar Banerjee">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="icon" type="image/png" href="sheekar2.jpg">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
 
-  
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--secondary) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .active {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 76px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-section h1, 
+        .hero-section h4, 
+        .hero-section p, 
+        .hero-section .lead {
+            color: white !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .leadership-intro {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .leadership-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0;
+        }
+
+        .competition-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 40px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .competition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .competition-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .competition-title {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .competition-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .achievement-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .achievement-runner-up {
+            background: #e53e3e;
+        }
+
+        .achievement-finalist {
+            background: #dd6b20;
+        }
+
+        .achievement-participant {
+            background: #38a169;
+        }
+
+        .achievement-quarterfinal {
+            background: #805ad5;
+        }
+
+        .achievement-sixth {
+            background: #319795;
+        }
+
+        .achievement-eleventh {
+            background: #4a5568;
+        }
+
+        .competition-body {
+            padding: 30px;
+        }
+
+        .competition-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .competition-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .competition-image:hover {
+            transform: scale(1.03);
+        }
+
+        .competition-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            font-size: 0.8rem;
+            text-align: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .competition-image:hover .image-caption {
+            opacity: 1;
+        }
+
+        .competition-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-section {
+            background: rgba(49, 130, 206, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .team-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 15px;
+            border-radius: 6px;
+            background: rgba(49, 130, 206, 0.1);
+        }
+
+        .project-link:hover {
+            color: var(--primary);
+            text-decoration: none;
+            transform: translateY(-2px);
+            background: rgba(49, 130, 206, 0.2);
+        }
+
+        .project-link i {
+            margin-right: 5px;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            
+            .competition-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .competition-image-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .competition-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+        }
+
+        /* Animation for competition cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .competition-card {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
+</head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="index.html">Home</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sheekar Banerjee</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teach.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="leader.html">Competitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="workshops.html">Workshops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="culture.html">Culture</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h1>Leadership & Competitions</h1>
+                    <p class="lead">Leading teams to success in national technological competitions and hackathons</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Introduction -->
+    <section class="py-5">
+        <div class="container">
+            <div class="leadership-intro" data-aos="fade-up">
+                <p>
+                    I led my research team and represented my undergraduate University (IUBAT) at 10 National 
+                    Technological Competitions, Hackathons, and Expos. I achieved Runner-Up titles at 3 National 
+                    Tech Competitions in 2019 and 2020, demonstrating strong leadership and technical excellence.
+                </p>
+            </div>
+
+            <!-- Competition Stats -->
+            <div class="row text-center mb-5">
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">National Competitions</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Runner-Up Titles</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">National Wins</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-item">
+                        <span class="stat-number">2017-2020</span>
+                        <span class="stat-label">Active Period</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitions Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Competition Highlights</h2>
+            
+            <!-- Competition 1 -->
+            <div class="competition-card" data-aos="fade-up">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">Mujib Borsho IT Carnival 2020</h3>
+                        <p class="competition-subtitle">Dhaka International University</p>
+                    </div>
+                    <div class="achievement-badge achievement-runner-up">Runner-Up</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="diu1.png" alt="DIU Competition">
+                            <div class="image-caption">Team SENSO CODER at DIU</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="diu6.jpg" alt="Award Ceremony">
+                            <div class="image-caption">Award Ceremony</div>
+                        </div>
+                    </div>
+                    <p>
+                        I led my research team "SENSO CODER" from IUBAT CSE Robotics Club at Mujib Borsho IT Carnival 2020 
+                        organized by Dhaka International University (DIU). We secured the runner-up position in the Tech Idea 
+                        Contest category by demonstrating "The Smart Injector" project.
+                    </p>
+                    
+                    <div class="competition-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">17</span>
+                            <span class="stat-label">Teams Competed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Finalists</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Runner-Up</span>
+                            <span class="stat-label">Achievement</span>
+                        </div>
+                    </div>
+                    
+                    <div class="team-section">
+                        <div class="team-title">Team Members</div>
+                        <div class="team-members">
+                            <span class="team-member">Sheekar Banerjee (Team Lead)</span>
+                            <span class="team-member">Saleh Bin Sayeem</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 2 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">JU CSE Fest 2019</h3>
+                        <p class="competition-subtitle">Jahangirnagar University</p>
+                    </div>
+                    <div class="achievement-badge achievement-runner-up">First Runner-Up</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="ju1.jpg" alt="JU Competition">
+                            <div class="image-caption">Team at JU CSE Fest</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="ju2.jpg" alt="Project Demonstration">
+                            <div class="image-caption">Project Demonstration</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="ju7.jpg" alt="Award Moment">
+                            <div class="image-caption">Award Moment</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="ju4.jpg" alt="Team Photo">
+                            <div class="image-caption">Team Photo</div>
+                        </div>
+                    </div>
+                    <p>
+                        Under my leadership, "SENSO CODER" achieved First Runner-Up position among the top 11 nationwide 
+                        selected teams at the Tech Idea Competition of JU CSE FEST 2019 powered by Tiger IT. We presented 
+                        our second phase implementation of the world's first Fully Automated Multiple Injection System with 
+                        Real Time Clock (RTC) feature.
+                    </p>
+                    
+                    <div class="team-section">
+                        <div class="team-title">Team Members</div>
+                        <div class="team-members">
+                            <span class="team-member">Sheekar Banerjee (Team Lead)</span>
+                            <span class="team-member">Saleh Bin Sayeem</span>
+                            <span class="team-member">Mohammad Ali Shuvo</span>
+                            <span class="team-member">Nafi Shariar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 3 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">Innovation Competition 2019</h3>
+                        <p class="competition-subtitle">IUBAT</p>
+                    </div>
+                    <div class="achievement-badge achievement-runner-up">Second Runner-Up</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="iubat1.jpg" alt="IUBAT Competition">
+                            <div class="image-caption">Competition at IUBAT</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="iubat3.png" alt="Project Display">
+                            <div class="image-caption">Project Display</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="iubat2.jpg" alt="Team Work">
+                            <div class="image-caption">Team Collaboration</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="iubat4.jpg" alt="Award Ceremony">
+                            <div class="image-caption">Award Ceremony</div>
+                        </div>
+                    </div>
+                    <p>
+                        My leadership guided "SENSO CODER" to achieve Second Runner-Up position among the top 21 selected 
+                        projects at the Innovation Competition 2019 powered by iLab innovation and Bangladesh ICT Ministry. 
+                        We presented our first phase implementation of the world's first Fully Automated Multiple Injection 
+                        System with Real Time Clock (RTC) feature.
+                    </p>
+                    
+                    <div class="competition-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">21</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Second</span>
+                            <span class="stat-label">Runner-Up</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">First Phase</span>
+                            <span class="stat-label">Implementation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 4 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">MindSparks 2020</h3>
+                        <p class="competition-subtitle">Ahsanullah University of Science and Technology</p>
+                    </div>
+                    <div class="achievement-badge achievement-participant">Finalist</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="aust5.jpg" alt="AUST Competition">
+                            <div class="image-caption">Team at AUST</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="aust1.jpg" alt="Project Setup">
+                            <div class="image-caption">Project Setup</div>
+                        </div>
+                    </div>
+                    <p>
+                        We demonstrated an Environment Monitoring System with Machine Learning based Predictive Features 
+                        at MindSparks'20, AUST. This time Saleh Bin Sayeem led our team "SENSO CODER" and I served as 
+                        second in command. We developed a complex monitoring platform on Arduino ATMega with various 
+                        sensors and implemented a Random Forest Algorithm for predictive data analysis.
+                    </p>
+                    
+                    <div class="team-section">
+                        <div class="team-title">Technical Implementation</div>
+                        <p>
+                            Developed complex circuitry on Arduino ATMega with sensors (Sound, DHT11 temperature-humidity, 
+                            dust, CO2 and YL69 pH). Implemented a library with Random Forest Algorithm for predictive data 
+                            analysis within the platform.
+                        </p>
+                        <div class="team-members">
+                            <span class="team-member">Saleh Bin Sayeem (Team Lead)</span>
+                            <span class="team-member">Sheekar Banerjee (Tech Lead)</span>
+                            <span class="team-member">Kamrul</span>
+                            <span class="team-member">Tawfiq Anam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 5 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">Smart City Expo 2019</h3>
+                        <p class="competition-subtitle">International Convention City Bashundhara, Dhaka</p>
+                    </div>
+                    <div class="achievement-badge achievement-participant">Exhibitor & Best Project Award</div>
+                    
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="expo1.jpg" alt="Expo Presentation">
+                            <div class="image-caption">With Dhaka North City Mayor</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="expo3.jpg" alt="Project Demonstration">
+                            <div class="image-caption">With Entrepreneur Md. Ariful Hasan-Opu</div>
+                        </div>
+                    </div>
+                    <p>
+                        I represented my Department of Computer Science and Engineering, IUBAT at the International 
+                        Smart City Expo'19 where I demonstrated the Sensor-based Multiple Injection Prototype with 
+                        Real Time Clock (RTC) Feature. Presented the project to Mr. Atiqul Islam, The Honorable Mayor 
+                        of Dhaka-North City Corporation and Md. Ariful Hasan-Opu, a recognized entrepreneur and visionary.
+                    </p>
+                    
+                    <div class="competition-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">International</span>
+                            <span class="stat-label">Expo</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">City Mayor</span>
+                            <span class="stat-label">Presentation</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Smart City</span>
+                            <span class="stat-label">Focus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 6 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">Mecceleration 2019</h3>
+                        <p class="competition-subtitle">Islamic University of Technology (IUT)</p>
+                    </div>
+                    <div class="achievement-badge achievement-participant">4th Position</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="iut1.jpg" alt="IUT Competition">
+                            <div class="image-caption">Project Demonstration at IUT</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="iut4.jpg" alt="International Visitors">
+                            <div class="image-caption">International Visitors</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="iut7.jpg" alt="Team Presentation">
+                            <div class="image-caption">Team Presentation</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="iut9.jpg" alt="Project Display">
+                            <div class="image-caption">Project Display</div>
+                        </div>
+                    </div>
+                    <p>
+                        I led "SENSO CODER" in the National Project Showcasing Competition called "Mecceleration'19" at IUT. 
+                        We demonstrated "The Smart Injector" for the very first time. Received massive positive reviews and 
+                        critical acclaim from numerous national and international visitors including students and teachers 
+                        from Yemen, Afghanistan, Pakistan, Nigeria, Malaysia, MIST, BUET, BUP, BracU, AIUB and other institutions.
+                    </p>
+                    
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/pulse/smart-injector-sheekar-banerjee/?fbclid=IwAR097ACQEzMu-LBjhDnZRm6x9nUPV71IIPalpl-jeYRMkVm_BiLhwnCwXSQ_aem_AUA_0qxyvZ-dA9wU2nIrg0GkOClae8jCin4cqQhBM5IUWn3jsA9DvPzdXmlMgFw7HKYpLNHWAs6d-jnAxPRN4PSb" class="project-link" target="_blank">
+                            <i class="fas fa-newspaper"></i> See Article
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 7 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">Robo Carnival 2019</h3>
+                        <p class="competition-subtitle">Bangladesh University of Engineering and Technology (BUET)</p>
+                    </div>
+                    <div class="achievement-badge achievement-quarterfinal">Quarter Finalist</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="buet1.jpg" alt="BUET Competition">
+                            <div class="image-caption">Team at BUET</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="buet2.jpg" alt="Robo Soccer">
+                            <div class="image-caption">Robo Soccer Competition</div>
+                        </div>
+                    </div>
+                    <p>
+                        I led my robotics team to participate in a National Robotics Competition at BUET called Robo Carnival 2019. 
+                        We competed in the "Robo Soccer" segment but got eliminated in the quarter final round. Despite the setback, 
+                        this experience inspired the development of "Nano Rover" which later won a Best Paper Award.
+                    </p>
+                    
+                    <div class="team-section">
+                        <div class="team-title">Team Members</div>
+                        <div class="team-members">
+                            <span class="team-member">Sheekar Banerjee (Team Lead)</span>
+                            <span class="team-member">Rajon Sarkar</span>
+                            <span class="team-member">Mohammad Ali Shuvo</span>
+                            <span class="team-member">Tarikol Islam Touhid</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://www.youtube.com/watch?v=8Ba3NPiTAfM" class="project-link" target="_blank">
+                            <i class="fas fa-play-circle"></i> Nano Rover Phase-1 Demo
+                        </a>
+                        <a href="https://link.springer.com/chapter/10.1007/978-981-19-2347-0_55" class="project-link" target="_blank">
+                            <i class="fas fa-file-alt"></i> Research Paper
+                        </a>
+                        <a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view" class="project-link" target="_blank">
+                            <i class="fas fa-award"></i> Best Paper Award
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 8 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="700">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">Smart Hackathon 2018</h3>
+                        <p class="competition-subtitle">Bangladesh University of Professionals (BUP)</p>
+                    </div>
+                    <div class="achievement-badge achievement-sixth">6th Position</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="bup1.jpg" alt="BUP Hackathon">
+                            <div class="image-caption">BUP ICT Fest Hackathon</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="bup2.jpg" alt="Team Work">
+                            <div class="image-caption">Team Collaboration</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="bup3.jpg" alt="Project Development">
+                            <div class="image-caption">Project Development</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="bup4.jpg" alt="Competition Venue">
+                            <div class="image-caption">Competition Venue</div>
+                        </div>
+                    </div>
+                    <p>
+                        Participated in BUP ICT Fest Hackathon 2018 to solve real-world problems. We developed an efficient 
+                        online examination platform to help students avoid the complexities of physical participation. 
+                        Our team achieved sixth position in this national competition.
+                    </p>
+                    
+                    <div class="team-section">
+                        <div class="team-title">Project Solution</div>
+                        <p>
+                            Developed an efficient online examination taking platform to eliminate complexities of physical 
+                            participation for students during exams.
+                        </p>
+                        <div class="team-members">
+                            <span class="team-member">Sheekar Banerjee</span>
+                            <span class="team-member">Mohammad Ali Shuvo</span>
+                            <span class="team-member">Redwan Ahmed Khan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 9 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="800">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">ROBOLUTION 2018</h3>
+                        <p class="competition-subtitle">Military Institute of Science and Technology (MIST)</p>
+                    </div>
+                    <div class="achievement-badge achievement-eleventh">11th Position</div>
+                </div>
+                <div class="competition-body">
+                    <div class="competition-image-grid">
+                        <div class="competition-image">
+                            <img src="mist1.jpg" alt="MIST Competition">
+                            <div class="image-caption">ROBOLUTION at MIST</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="mist2.jpg" alt="Line Following Robot">
+                            <div class="image-caption">Autonomous Line Following Robot</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="mist3.jpg" alt="Team SENSO CODER">
+                            <div class="image-caption">Team SENSO CODER</div>
+                        </div>
+                        <div class="competition-image">
+                            <img src="mist4.jpg" alt="Competition Arena">
+                            <div class="image-caption">Competition Arena</div>
+                        </div>
+                    </div>
+                    <p>
+                        This was my first national competition participation. I chose the country's biggest robotics event 
+                        ROBOLUTION'18 and assembled team "SENSO CODER" to develop an autonomous line following robot. 
+                        Despite having no prior experience, we secured our place in the finals and achieved eleventh position 
+                        competing against 75 teams from across the country.
+                    </p>
+                    
+                    <div class="competition-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">75</span>
+                            <span class="stat-label">Teams</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">11th</span>
+                            <span class="stat-label">Position</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">First</span>
+                            <span class="stat-label">Competition</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://www.youtube.com/watch?v=D9cmXwATQGk" class="project-link" target="_blank">
+                            <i class="fas fa-play-circle"></i> Demo Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition 10 -->
+            <div class="competition-card" data-aos="fade-up" data-aos-delay="900">
+                <div class="competition-header">
+                    <div>
+                        <h3 class="competition-title">IUBAT Intra-University Robotics Contest</h3>
+                        <p class="competition-subtitle">IUBAT University</p>
+                    </div>
+                    <div class="achievement-badge achievement-participant">Organizer & Participant</div>
+                </div>
+                <div class="competition-body">
+                    <p>
+                        As the founder and Chief Trainer of IUBAT CSE Robotics Club, I organized and participated in 
+                        multiple intra-university robotics contests. These events served as training grounds for national 
+                        competitions and helped develop the robotics culture at IUBAT.
+                    </p>
+                    
+                    <div class="team-section">
+                        <div class="team-title">Impact & Legacy</div>
+                        <p>
+                            These intra-university competitions helped train approximately 200 students on robotics systems, 
+                            40+ different sensor types, and programming. The trained teams went on to win 5 National 
+                            Technological Project Competitions within 3 years of the club's establishment.
+                        </p>
+                    </div>
+                    
+                    <div class="competition-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Students Trained</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">National Wins</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Competition Impact & Legacy</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="competition-card">
+                        <div class="competition-body">
+                            <h4>From Competition Failure to Research Success</h4>
+                            <p>
+                                After our team's elimination in the quarter-finals of Robo Carnival 2019 at BUET, 
+                                I transformed this setback into a research opportunity. The experience led to the 
+                                development of "Nano Rover" - a multi-sensory surveillance robot with modified inception-net.
+                            </p>
+                            
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/watch?v=8Ba3NPiTAfM" class="project-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Nano Rover Phase-1 Demo
+                                </a>
+                                <a href="https://link.springer.com/chapter/10.1007/978-981-19-2347-0_55" class="project-link" target="_blank">
+                                    <i class="fas fa-file-alt"></i> Research Paper
+                                </a>
+                                <a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view" class="project-link" target="_blank">
+                                    <i class="fas fa-award"></i> Best Paper Award
+                                </a>
+                            </div>
+                            
+                            <div class="team-section mt-4">
+                                <div class="team-title">Key Achievement</div>
+                                <p>
+                                    This research transformation demonstrates the ability to convert competition 
+                                    challenges into successful research outcomes, resulting in a Best Paper Award 
+                                    at a Springer Nature affiliated international conference in 2021.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Interested in Collaboration?</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p class="lead">Let's discuss competition opportunities, team leadership, or innovative projects</p>
+                    <div class="social-links mt-4">
+                        <a href="mailto:sheekar.banerjee@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=TpLbmAcAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="Sheekar_CV_Academy.pdf" title="CV"><i class="fas fa-file-pdf"></i></a>
+                        <a href="https://www.linkedin.com/in/sheekar-banerjee-6b189b12a/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/ac005sheekar" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://projecthub.arduino.cc/sheekar" title="Arduino"><i class="fas fa-microchip"></i></a>
+                        <a href="https://www.youtube.com/@sheekarbanerjee" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://soundcloud.com/sheekar-banerjee" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Sheekar Banerjee. All Rights Reserved.</p>
+            <p>Designed for PhD Admissions</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="research.html">Research</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="projects.html">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="teach.html">Teaching</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="leader.html">Competitions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="workshops.html">Workshops</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="culture.html">Culture</a>
-      </li>
-
-    </ul>
-  </nav><br>
-  
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-
-              <heading><strong>I led my research team and represented my undergrad University (IUBAT)
-                at 10 National Technological Competitions, Hackathons and Expo. I ended up winning Runner Up Titles at 
-                3 National Tech Competitions in 2019 and 2020.
-              </strong></heading><br><br>
-              
-            </td>
-            </tr>
-            <tr>
-              <td>
-                <h2><em>Runner UP at Mujib Borsho IT Carnival 2020, Dhaka International University</em></h2>
-                <img src="diu1.png" alt="DIU" style="width:400px;height:300px;">
-                <img src="diu6.jpg" alt="DIU" style="width:400px;height:300px;">
-                <br><br>
-
-                I led my research team "SENSO CODER" from IUBAT CSE Robotics Club at Mujib Borsho IT Carnival 2020 Organized by Dhaka International University (DIU).
-                We secured our position of runner-up at the category of Tech Idea Contest. We demonstrated the idea of "The Smart Injector" over there. The other team member was Saleh Bin Sayeem.
-                It was a National Contest where 17 nation-wide selected teams got the chance to participate and only 5 teams could make it to the final round.
-
-                
-                
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-            <br><br><br>
-            
-            <tr>
-              <td>
-                <h2><em>First Runners UP at JU CSE Fest 2019, Jahangirnagar University</em></h2>
-                <img src="ju1.jpg" alt="JU" style="width:400px;height:300px;">
-                <img src="ju2.jpg" alt="JU" style="width:400px;height:300px;">
-                <img src="ju7.jpg" alt="JU" style="width:400px;height:300px;">
-                <img src="ju4.jpg" alt="JU" style="width:400px;height:300px;">
-
-                <br><br>
-
-                Under my leadership, "SENSO CODER" also achieved First Runners Up position amongst the top 11 nationwide selected teams at the Tech Idea Competition of JU CSE FEST 2019 powered by Tiger IT at Jahangirnagar University, Dhaka, Bangladesh.
-                Here we presented our second phase implementation of the World’s first ever Fully Automated Multiple Injection System with Real Time Clock (RTC) feature. The team members were Saleh Bin Sayeem, Mohammad Ali Shuvo and Nafi Shariar.
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <h2><em>Second Runner UP at Innovation Competition 2019, IUBAT</em></h2>
-                <img src="iubat1.jpg" alt="IUBAT" style="width:400px;height:300px;">
-                <img src="iubat3.png" alt="IUBAT" style="width:350px;height:300px;">
-                <img src="iubat2.jpg" alt="IUBAT" style="width:400px;height:300px;">
-                <img src="iubat4.jpg" alt="IUBAT" style="width:350px;height:300px;">
-
-                <br><br>
-
-                My leadership also garnered "SENSO CODER" to achieve Second Runners Up position amongst the top 21 selected projects at the Innovation Competition 2019 powered by iLab innovation, Bangladesh ICT Ministry, Dhaka, Bangladesh.
-                Here we presented our first phase implementation of the World’s first ever Fully Automated Multiple Injection System with Real Time Clock (RTC) feature. The team members were Saleh Bin Sayeem, Mohammad Ali Shuvo and Nafi Shariar.
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <h2><em>MindSparks 2020, Ahsanullah University of Science and Technology (AUST)</em></h2>
-                <img src="aust5.jpg" alt="AUST" style="width:500px;height:300px;">
-                <img src="aust1.jpg" alt="AUST" style="width:450px;height:300px;">
-                
-                <img src="aust7.png" alt="AUST" style="width:850px;height:400px;">
-
-                <br><br>
-
-                We demonstrated Environment Monitoring System with Machine Learning based Predictive Features at MindSparks'20, AUST. This time Saleh Bin Sayeem led our team "SENSO CODER" and I was the second in command.
-                We developed the complex circuitry of monitoring platform on Arduino ATMega and Sensors (Sound, DHT11 temperature-humidity, dust, CO2 and YL69 pH). I implemented a library with The Random Forest Algorithm to get the predictive features of data analysis within the platfrom. The other team members were Kamrul and Tawfiq Anam.
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <h2><em>Smart City Expo 2019, International Convention City Bashundhara, Dhaka</em></h2>
-                <img src="expo1.jpg" alt="Expo" style="width:450px;height:300px;">
-                <img src="expo3.jpg" alt="Expo" style="width:450px;height:300px;">
-                <br><br>
-
-                I represented my Department of Computer Science and Engineering, IUBAT at the International Smart City Expo'19 where I demonstrated the Sensor based Multiple Injection Prototype with Real Time Clock (RTC) Feature
-                in front of Mr. Atiqul Islam, The Honorable Mayor of Dhaka-North City Corporation (The image on the left). We also presented the project in front of Md. Ariful Hasan-Opu, an entrepreneur and a visionary who is widely recognized for his perseverance in the path of dreaming of a revolutionized Bangladesh
-                (The image on the right). 
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <h2><em>Mecceleration 2019, Islamic University of Technology (IUT)</em></h2>
-                <img src="iut1.jpg" alt="IUT" style="width:450px;height:300px;">
-                <img src="iut4.jpg" alt="IUT" style="width:450px;height:300px;">
-                <img src="iut7.jpg" alt="IUT" style="width:450px;height:300px;">
-                <img src="iut9.jpg" alt="IUT" style="width:450px;height:300px;">
-
-                <br><br>
-
-                I led "SENSO CODER" in the National Project Showcasing Competition called "Mecceleration'19" at IUT. We demonstrated "The Smart Injector" for the very first time. 
-                There was a massive level of positive reviews and critical acclaims which came from enumerable national and international visitors. Students and experienced teachers from Yemen, Afghanistan, Pakistan, Nigeria, 
-                Malaysia, MIST, BUET, BUP, BracU, AIUB and so many other places came across our project, profoundly appreciated us and suggested us to bring up the project to the topmost level of the Government Authority. 
-                
-                [<a href="https://www.linkedin.com/pulse/smart-injector-sheekar-banerjee/?fbclid=IwAR097ACQEzMu-LBjhDnZRm6x9nUPV71IIPalpl-jeYRMkVm_BiLhwnCwXSQ_aem_AUA_0qxyvZ-dA9wU2nIrg0GkOClae8jCin4cqQhBM5IUWn3jsA9DvPzdXmlMgFw7HKYpLNHWAs6d-jnAxPRN4PSb">
-                  See Article</a>]
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-
-
-            <tr>
-              <td>
-                <h2><em>Robo Carnival 2019, Bangladesh University of Engineering and Technology (BUET)</em></h2>
-                <img src="buet1.jpg" alt="BUET" style="width:600px;height:500px;">
-                <img src="buet2.jpg" alt="BUET" style="width:400px;height:500px;">
-                <img src="buet3.jpg" alt="BUET" style="width:800px;height:500px;">
-
-                <br><br>
-
-                I led my robotics team to participate in a National Robotics Competition at BUET called Robo Carnival 2019. 
-                We fought at the Segment of "Robo Soccer" but got eliminated in the quarter final round.
-                The other team members were Rajon Sarkar, Mohammad Ali Shuvo and Tarikol Islam Touhid.
-
-                After failing miserably, I shifted another research idea from this robotic prototype which came up 
-                with the manifestation of "Nano Rover". This "Nano Rover" later on had its own identity as a 
-                multi-sensory surveillance robot with modified inception-net. This research ended winning a 
-                "Best Paper Award" in a Springer Nature affiliated international conference in 2021.
-                <br>
-                [<a href="https://www.youtube.com/watch?v=8Ba3NPiTAfM">Nano Rover Phase-1 Demo</a>]
-                [<a href="https://link.springer.com/chapter/10.1007/978-981-19-2347-0_55">Paper</a>]
-                [<a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view">Best Paper Award</a>]
-
-
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-
-
-
-            <tr>
-              <td>
-                <h2><em>Smart Hackathon 2018, Bangladesh University of Professionals (BUP)</em></h2>
-                <img src="bup1.jpg" alt="BUP" style="width:450px;height:300px;">
-                <img src="bup2.jpg" alt="BUP" style="width:450px;height:300px;">
-                <img src="bup3.jpg" alt="BUP" style="width:450px;height:300px;">
-                <img src="bup4.jpg" alt="BUP" style="width:450px;height:300px;">
-
-                <br><br>
-
-                It was time to participate in a National Hackathon to solve some real world problems.
-                We joined BUP ICT Fest Hackathon 2018 where we developed an efficient online examination taking 
-                platform so that students can avoid the complexities coming from that physical participation.
-                We achieved sixth position in this Competition. The other team members were Mohammad Ali Shuvo and 
-                Redwan Ahmed Khan.
-
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <h2><em>ROBOLUTION 2018, Military Institute of Science and Technology (MIST)</em></h2>
-                <img src="mist1.jpg" alt="MIST" style="width:450px;height:300px;">
-                <img src="mist2.jpg" alt="MIST" style="width:450px;height:300px;">
-                <img src="mist3.jpg" alt="MIST" style="width:450px;height:300px;">
-                <img src="mist4.jpg" alt="MIST" style="width:450px;height:300px;">
-
-                <br><br>
-
-                This was the first time I was participating in any national competition. I chose the 
-                countries biggest robotics event ROBOLUTION'18 to participate in. I assembled my team "SENSO CODER" and 
-                started developing our autonomous line following robot. Despite having no prior experience, we 
-                still secured our place at the finals over the event. We achieved eleventh place after fighting 
-                against 75 other teams from the entire country. 
-                The other team members were Mohammad Gulzar Hossain, Rajon Sarkar and Hasibul Islam Polok.
-                <br>
-                [<a href="https://www.youtube.com/watch?v=D9cmXwATQGk">Demo</a>]
-
-                <br><br><br>
-                  
-              </td>
-            </tr>
-
-
-        
-
-
-
-<br><br>
-            
-
-
-            
-        </table>
-
-        
-      
-      </td>
-    </tr>
-  </table>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
-
 </html>
