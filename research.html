@@ -1,341 +1,572 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Sheekar Banerjee | Academic Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="sheekar2.jpg">
 
-  <title>Research - Sheekar Banerjee</title>
-  
-  <meta name="author" content="Sheekar Banerjee">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="icon" type="image/png" href="sheekar2.jpg">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--secondary) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .active {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 76px;
+        }
+
+        .hero-section h1, 
+        .hero-section h4, 
+        .hero-section p, 
+        .hero-section .lead {
+            color: white !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .card {
+            border: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+        }
+
+        .research-interest-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .paper-item {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .paper-item:hover {
+            background-color: rgba(49, 130, 206, 0.05);
+            border-radius: 8px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+
+        .paper-image {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+        }
+
+        .paper-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .paper-title a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+
+        .paper-authors {
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .paper-venue {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .paper-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .paper-links a:hover {
+            color: var(--primary);
+        }
+
+        .badge-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .badge-award {
+            background-color: #e53e3e;
+            color: white;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            
+            .paper-item {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="index.html">Home</a>
-    
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="research.html">Research</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="projects.html">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="teach.html">Teaching</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="leader.html">Competitions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="workshops.html">Workshops</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="culture.html">Culture</a>
-      </li>
-    </ul>
-  </nav><br>
-  
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sheekar Banerjee</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teach.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="leader.html">Competitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="workshops.html">Workshops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="culture.html">Culture</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-              <heading><strong>Research Interest</strong></heading><br><br>
-              <a href="interest.PNG"><img style="width:30%;max-width:30%" alt="profile photo" src="interest.PNG" class="hoverZoomLink"></a>
-            </td>
-              <p style="text-align: center;">
-                
-                <!-- My research interests lie broadly in computer vision and artificial intelligence. My current focus majorly is to explore and conduct fundamental computer vision research with limited supervision, with a goal to conduct research and design products benefiting humanity. I am excited to be part of this fast-evolving and fascinating field, and I hope to contribute to its growth. -->
-                <!-- and specifically in unsupervised learning and semi/self-supervised learning.  -->
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>Research</h1>
+                    <p class="lead">Computer Vision, Deep Learning, Medical Imaging & Robotics</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
+    <!-- Research Interest Section -->
+    <section id="research-interest" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="row">
+                <div class="col-lg-4 text-center mb-4">
+                    <img src="interest.PNG" alt="Research Interests" class="research-interest-img">
+                </div>
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>My research interests lie broadly in computer vision and artificial intelligence. My current focus is to explore and conduct fundamental computer vision research with limited supervision, with a goal to conduct research and design products benefiting humanity. I am excited to be part of this fast-evolving and fascinating field, and I hope to contribute to its growth.</p>
+                            
+                            <p>During my undergrad, I worked as an independent researcher at IUBAT CSE Robot-Vision Lab and also as an undergraduate Research Assistant (RA) for multiple projects at the <a href="https://iubat.edu/miyan-research-institute/">Miyan Research Institute</a> with <a href="https://cse.iubat.edu/rashedul-islam/">Prof. Rashedul Islam</a>, <a href="https://cse.iubat.edu/md-alomgir-hossain/">Prof. Md. Alomgir Hossain</a> and <a href="https://www.aiub.edu/faculty-list/faculty-profile?q=aminun.nahar">Prof. Aminun Nahar</a> (from 2017 to 2020).</p>
+                            
+                            <p>After my graduation, I was fortunate to get an opportunity to work as a Research Assistant under the guidance of <a href="https://juniv.edu/teachers/ezharul.islam">Prof. Dr. Md. Ezharul Islam</a> at <a href="https://juniv.edu/">Jahangirnagar University</a> for a novel research project of Deep Learning based Computer Vision and Robotics in 2021 which led us winning the <strong><a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view">Best Paper Award</a></strong> in the International Conference of MIDAS 2021, Springer.</p>
+                            
+                            <p>Later on, between 2021 to 2024, I worked as a Researcher and Deep Learning Algorithm Developer in <a href="https://www.cisscom.com/">Cisscom</a> (United States), <a href="https://kaleidosoftgames.com/">KaleidoSoft</a> (Croatia) and <a href="https://www.vinacts.com/">Vinacts</a> (South Korea).</p>
+                            
+                            <p>From November 2023 to March 2025, I have worked as a Remote Research Assistant (RA) with <a href="https://p-humayun.inha.ac.kr/p-humayun/index.do">Dr. Humayun Kabir</a> from the Department of Integrated System Engineering at <a href="https://eng.inha.ac.kr/eng/index.do">Inha University</a>, South Korea. My research field was related with developing state of the art efficient algorithms for Robot Vision capabilities and medical image processing; occlusion aware object tracking and frame interpolation mechanism.</p>
+                            
+                            <p>From August 2025, during my days in the academia, I have been remotely working on a complex 4D CTP data enabled Medical Image Synthesis project under the supervision of <a href="https://marafathussain.github.io/">Dr. Mohammad Arafat Hussain</a>, who is a Postdoctoral Research Fellow at the <a href="https://hms.harvard.edu/">Harvard Medical School</a>. Here, I Delved deep into a large complex 4D CTP Dataset for an efficient medical image synthesis project. Successfully integrated some cutting-edge variants of Transformer mechanism to track CT Perfusion with the 4D CTP data at a globally unique rate of efficiency which we are aspiring to publish in some top venues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <p>
-              During my undergrad, I worked as an independent researcher at IUBAT CSE Robot-Vision Lab and 
-              also as an undergraduate Research Assistant (RA) for multiple projects at the 
-              <a href="https://iubat.edu/miyan-research-institute/">Miyan Research Institute</a>  
-              with 
-              <a href="https://cse.iubat.edu/rashedul-islam/">Prof. Rashedul Islam</a>, 
-              <a href="https://cse.iubat.edu/md-alomgir-hossain/">Prof. Md. Alomgir Hossain</a> and 
-              <a href="https://www.aiub.edu/faculty-list/faculty-profile?q=aminun.nahar">Prof. Aminun Nahar</a> (from 2017 to 2020).
-            </p>
-            <p>After my graduation, I was fortunate to get an opportunity to work as a Research Assistant 
-              under the guidance of <a href="https://juniv.edu/teachers/ezharul.islam">Prof. Dr. Md. Ezharul Islam</a> 
-              at <a href="https://juniv.edu/">Jahangirnagar University</a> 
-              for a novel research project of Deep Learning based Computer Vision and Robotics in 2021 which led us winning the 
-              <strong>
-                <a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view">Best Paper Award</a>
-              </strong> 
-              in the International Conference of MIDAS 2021, Springer.
-            </p>
-            <p>
-              Later on, between 2021 to 2024, I worked as a Researcher and Deep Learning Algorithm Developer in  
-              <a href="https://www.cisscom.com/">Cisscom</a> (United States),
-              <a href="https://kaleidosoftgames.com/">KaleidoSoft</a> (Croatia) and 
-              <a href="https://www.vinacts.com/">Vinacts</a> (South Korea).
-    
-              From November 2023 to March 2025, I have worked as a Remote Research Assistant (RA) 
-              with <a href="https://p-humayun.inha.ac.kr/p-humayun/index.do">Dr. Humayun 
-                Kabir</a>
-              from the Department of Integrated System Engineering at <a href="https://eng.inha.ac.kr/eng/index.do">Inha 
-                University</a>, South Korea. 
-              My research field was related with
-              developing state of the art efficient algorithms for Robot Vision capabilities 
-              and medical image processing; occlusion aware object tracking and frame interpolation mechanism. 
-
-              <br><br>
-                From August 2025, during my days in the academia, I have been remotely working on a complex 4D CTP data enabled 
-                Medical Image Synthesis project under the supervision of 
-                <a href="https://marafathussain.github.io/">Dr. Mohammad Arafat Hussain</a>, 
-                who is a Postdoctoral Research Fellow
-                at the <a href="https://hms.harvard.edu/">Harvard Medical School</a>. Here, I Delved deep into 
-                a large complex 4D CTP Dataset for an efficient medical image synthesis project. Successfully integrated 
-                somec utting-edge variants of Transformer mechanism to track CT Perfusion with the 4D CTP data at a 
-                globally unique rate of efficiency which we are aspiring to publish in some top venues.
-              
-              
-            </p>
-          </td>
-        </tr>
-      </tbody></table>
-
-
-
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading><strong>Publications</strong></heading><br><br>
-              
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- Papers list -->
-
-
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-           <td style="padding:20px;width:25%;vertical-align:middle">
-             <img src="sbhk-net-graphics.PNG" width="200" height="140">
-           </td>
-           <td width="75%" valign="middle">
-             <a href= "https://doi.org/10.36227/techrxiv.171710259.90201373/v1">
-               <papertitle>
-                YOLO/SBHK-Net: Occlusion Aware Robot Vision Neural Network with Compound Model Scaling and Re-parameterized Convolution</papertitle>
-             </a>
-             <br>
-               <strong>Sheekar Banerjee</strong>, Humayun Kabir<br>
-             <!-- <em>Submitted to IEEE Transactions on Neural Networks and Learning Systems in May 2024</em><br> -->
-             [<a href="https://www.researchgate.net/publication/381036272_YOLOSBHK-Net_Occlusion_Aware_Robot_Vision_Neural_Network_with_Compound_Model_Scaling_and_Re-parameterized_Convolution">
-              Preprint</a>]/
-             [<a href="https://github.com/ac005sheekar/SBHK-Net">code</a>]
-             <p> In this research, we initiated a unique and cutting-edge backbone neural network for the conventional YOLO algorithm which we named as SBHK-Net. The network boosted up the performance of the existing YOLO algorithm drastically which manifests a strong potential of improving tracking and recognition accuracies of other conventional algorithms in the robot vision industry as well. It has the greatest accuracy 59.2% AP among all known real-time object detectors with 30 FPS or above on GPU RTX3060, and it outperforms all other known object detectors in the range of 5 FPS to 160 FPS. We used YOLOv7 as our reference point for the core research. The transformer-based detector SWINL Cascade-Mask R-CNN (9.2 FPS A100, 53.9% AP) and the convolutional detector ConvNeXt-XL Cascade-Mask R-CNN (8.6 FPS A100, 55.2% AP) are both outperformed by the SBHK-Net core object detector (56 FPS RTX3060, 56.4% AP) in terms of speed and accuracy, respectively.</p>
-             
-           </td>
-         </tr> </tbody></table>
-
-<br><br>
-
-
-        <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-           <td style="padding:20px;width:25%;vertical-align:middle">
-             <img src="breast 2020 CNN.png" width="200" height="140">
-           </td>
-           <td width="75%" valign="middle">
-             <a href= "https://www.biorxiv.org/content/10.1101/2024.05.04.592536v1.abstract">
-               <papertitle>
-                An Introductory Implementation of Breast Cancer Detection from Mammograms and Pixel Intensity with Efficient-Net Other Neural Nets</papertitle>
-             </a>
-             <br>
-               <strong>Sheekar Banerjee</strong>, Humayun Kabir<br>
-             <em>Published in Cold Spring Harbor Laboratory, 2024</em><br>
-             [<a href="https://www.biorxiv.org/content/10.1101/2024.05.04.592536v1.full.pdf">bioRxiv</a>]/
-             [<a href="https://github.com/ac005sheekar/Breast-Cancer-Detection-with-Pixel-Intensity/">code</a>]
-             <p> We focused upon the deep learning approach to classify the normal and abnormal breast according to the medical imaging from the MIAS dataset of Mammograms and Pixel Intensity. The Convolution Neural Network (CNN) alongside ResNet, AmoebaNet and EfficientNet have been used for the detection with 330 mammograms in which 194 images are normal and 136 are having the identification of abnormal breasts. The accuracy of the entire experimental results was carrying the torch of potential legacy of deep learning in the medical imaging arena. The research is ongoing for the further development and optimization of CNN, AmoebaNet-C and EfficientNet architecture for the Pixel Intensity with higher accuracy, proper segmentation and masking.</p>
-             
-           </td>
-         </tr> </tbody></table>
-
-<br><br>
-
-        
-          
-
-
-          <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-           <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="breast.PNG" width="200" height="140">
-            </td>
-            <td width="75%" valign="middle">
-              <a href= "https://link.springer.com/chapter/10.1007/978-3-031-53717-2_30">
-                <papertitle>CEIMVEN: An Approach of Cutting Edge Implementation of Modified Versions of EfficientNet (V1-V2) Architecture for Breast Cancer Detection and Classification from Ultrasound Images</papertitle>
-              </a>
-              <br>
-                <strong>Sheekar Banerjee</strong>, Md. Kamrul Hasan Monir<br>
-              <em>Presented at the 2nd International Conference on Computing, IoT and Data Analytics (<strong> <a href="https://iccida.net/">ICCIDA</a></strong>)</em>, 2023.<br>
-              <em>Published in the Studies in Computational Intelligence, Springer-Nature, Switzerland, 2024</em><br>
-              [<a href="https://arxiv.org/abs/2308.13356">arXiv</a>]
-              [<a href="https://docs.google.com/presentation/d/1TERuOyXkmCEQR01EPGFrGaff_N2szD9b/edit?usp=sharing&ouid=113883945430849884931&rtpof=true&sd=true">slides</a>] /
-              [<a href="https://github.com/ac005sheekar/CEIMVEN">code</a>]
-              <p> In this research, we focused mostly on our rigorous novel implementations and iterative result analysis of different cutting-edge modified versions of EfficientNet architectures namely EfficientNet-V1 (b0-b7) and EfficientNet-V2 (b0-b3) with ultrasound image, named as CEIMVEN. We utilized transfer learning approach here for using the pre-trained models of EfficientNet versions. The approximate testing accuracies we got from the modified versions of EfficientNet-V1 (b0- 99.15%, b1- 98.58%, b2- 98.43%, b3- 98.01%, b4- 98.86%, b5- 97.72%, b6- 97.72%, b7- 98.72%) and EfficientNet-V2 (b0- 99.29%, b1- 99.01%, b2- 98.72%, b3- 99.43%) are showing very bright future and strong potentials of deep learning approach for the successful detection and classification of breast cancers from the ultrasound images at a very early stage.</p>
-              
-            </td>
-          </tr> </tbody></table>
-
-<br><br>
-
-          <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-           <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="combo_nano.png" width="200" height="140">
-            </td>
-            <td width="75%" valign="middle">
-              <a href="https://link.springer.com/chapter/10.1007/978-981-19-2347-0_55">
-                <papertitle>Nano Rover: A Multi-Sensory Full-Functional
-                    Surveillance Robot with Modified Inception-Net</papertitle>
-              </a>
-              <br>
-                <strong>Sheekar Banerjee</strong>, Aminun Nahar Jhumur, Md. Ezharul Islam<br>
-              <em>Presented at the Machine Intelligence and Data Science Applications, 
-                Proceedings of <strong><a href="https://link.springer.com/book/10.1007/978-981-19-2347-0">MIDAS 2021</a></strong></em>
-              
-              <em><strong>(<a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view">Best Paper Award winner</a>)</strong></font>.</em><br>
-              <em>Published in the Lecture Notes on Data Engineering and Communications Technologies, Springer-Nature, Singapore, 2022</em><br>
-                
-                [<a href="https://docs.google.com/presentation/d/1ASyFQ6cF2blp3uGTeCa4RvwnLy2elrsD/edit?usp=sharing&ouid=113883945430849884931&rtpof=true&sd=true">slides</a>]
-                
-              <p> Nano Rover is a significant approach of cost-efficient surveillance and reconnaissance robot which is fully functional and cost-efficient at the same time. It features the service of active reconnaissance mode with LIDAR sensor, location tracking with GPS Neo 6M module, visual information collection, person detection, weapons detection and identification, gender and age prediction of the hostile and other artificial threat detection, etc. Remote navigation plays as the core controlling system of the robot which is also modifiable through replacement with Internet and satellite navigation system. We modified the conventional Inception-Net architecture with a better hyper-parameter tuning for the successful execution of image processing tasks with a better level of accuracy so far.</p>
-            </td>
-          </tr> </tbody></table>
-
-<br><br>
-
-
-          <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-           <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="submarine.PNG" width="200" height="140">
-            </td>
-            <td width="75%" valign="middle">
-              <a href="https://tis.wu.ac.th/index.php/tis/article/view/4205">
-                <papertitle>A Novel Approach of Marine Ecosystem Monitoring System with Multi-Sensory Submarine on Robotic Platform for Visualizing the Climate Change Effect over Oceanic Environment</papertitle>
-              </a>
-              <br>
-                <strong>Sheekar Banerjee</strong>, Aminun Nahar Jhumur<br>
-              <em>Trends in Sciences (<strong><a href="https://tis.wu.ac.th/index.php/tis/">TiS</a> </strong>)</em>, 2022 <br>
-              
-              <p> This robotics research project proposes a solution which appears to be a full-fledged Bluetooth controlled Submarine prototype with a sensory chipboard attached inside its endo-skeleton which contains multiple sensors like DHT11 temperature-humidity, dust, CO2 and YL69 pH sensors. The sensory data provides the information of underwater whether the naval environment is habitable for the marine biological species or not, under the terrible effect of global climate change. The submarine prototype is fully functional in the surface and underwater scenario which contains a very unique mechanical design and circuitry with an exceptional sensor data streaming capability which can be used by marine biological researchers and oceanographers professionally as a full-fledged marine ecosystem monitoring device.</p>
-            </td>
-          </tr> </tbody></table>
-
-<br><br>
-            <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="chatbot-graphic.PNG" width="200" height="140">
-              </td>
-              <td width="75%" valign="middle">
-                <a href= "https://www.researchgate.net/profile/Sheekar-Banerjee/publication/380166199_AN_INTEGRAL_EFFORT_OF_OPTIMIZING_THE_MAJOR_INFORMATION_RETRIEVAL_CHATBOT_ALGORITHMS_WITHIN_A_UNIVERSITY_AUTOMATION_PLATFORM/links/662ec0267091b94e93e35fd8/AN-INTEGRAL-EFFORT-OF-OPTIMIZING-THE-MAJOR-INFORMATION-RETRIEVAL-CHATBOT-ALGORITHMS-WITHIN-A-UNIVERSITY-AUTOMATION-PLATFORM.pdf">
-                  <papertitle>
-                    An Integral Effort of Optimizing the Major Information Retrieval Chatbot Algorithms within a University Automation Platform</papertitle>
-                </a>
-                <br>
-                  <strong>Sheekar Banerjee</strong>, Md. Sakibul Islam<br>
-                <em>Undergrad Thesis on Natural Language Processing and Human Computer Interaction, 2020</em><br>
-                [<a href="https://www.researchgate.net/profile/Sheekar-Banerjee/publication/380166199_AN_INTEGRAL_EFFORT_OF_OPTIMIZING_THE_MAJOR_INFORMATION_RETRIEVAL_CHATBOT_ALGORITHMS_WITHIN_A_UNIVERSITY_AUTOMATION_PLATFORM/links/662ec0267091b94e93e35fd8/AN-INTEGRAL-EFFORT-OF-OPTIMIZING-THE-MAJOR-INFORMATION-RETRIEVAL-CHATBOT-ALGORITHMS-WITHIN-A-UNIVERSITY-AUTOMATION-PLATFORM.pdf">ResearchGate</a>]/
-                [<a href="https://github.com/ac005sheekar/Chatbot-Automation-with-Python-Keras-and-Tensorflow">code</a>]
-                <p> In this research, we tried to represent an optimized implementation of different chatbot algorithmic approaches within a single University Automation query platform where the previous chatbots were developed concerning the utility areas of agriculture, economics, medical science with disease prediction, admission system and tourism. They were manifested with Deep Neural Networks like CNN, LSTM and NLP with different environments and approaches. Our primary concern was to combine and optimize all of the approaches in a single platform of a University Automation System as much as possible having Keras as backend. The accuracy rate seems to be very promising through the amalgamation of CNN layers and LSTM with NLP features.</p>
-                
-              </td>
-            </tr> </tbody></table>
-
-
-
-<br><br>
-            <table style="width:75%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="sim.jpg" width="200" height="140">
-              </td>
-              <td width="75%" valign="middle">
-                <a href="https://www.researchgate.net/publication/379537385_The_Smart_Injector_A_Robotic_Approach_of_Automated_Multiple_Injection_System_for_Critical_Patients_using_Real_Time_Clock_Feature">
-                  <papertitle>The Smart Injector: A Robotic Approach of
-                    Automated Multiple Injection System for
-                    Critical Patients using Real Time Clock Feature</papertitle>
-                </a>
-                <br>
-                  <strong>Sheekar Banerjee</strong>, Md. Alomgir Hossain<br>
-                  <em>Voluntary Research Work at IUBAT CSE Robotics Club</em>, 2019 <br>
-                  [<a href="https://www.researchgate.net/publication/379537385_The_Smart_Injector_A_Robotic_Approach_of_Automated_Multiple_Injection_System_for_Critical_Patients_using_Real_Time_Clock_Feature#fullTextFileContent">ResearchGate</a>]
-                  [<a href="https://github.com/ac005sheekar/Smart-Injector">code</a>]
-                
-                <p> In the rural world of medical services, we
-                  generally notice a lot of havoc which generally happens
-                  in the hospitals, clinics and related other medical
-                  centers. The conditions of Intensive Care Units (ICU) of
-                  the rural areas are quite intolerable because of the lack
-                  of qualified nurses. Doctors generally prescribe multiple
-                  injections for a single patient for each day. Nurses are
-                  responsible for the injection process but unfortunately
-                  they fail to perform the injection process very often in
-                  proper prescribed time in proper amount. This
-                  malpractice of treatment quite often results in the
-                  terrible sufferings of the ICU patients and sometimes a
-                  few patients even die. This study aims to minimize the
-                  hazard at the highest accuracy level possible. The
-                  research relates to the functionality of Real Time Clock
-                  (RTC) which provides the activation of automated time
-                  system and triggers the microcontroller's machinery to
-                  act according to the time. According to the doctor's
-                  prescribed time, injection's medicine will be flowing
-                  inside the pipelines and will be injected to the body of
-                  the patient through a cannula. In this study, Arduino
-                  microcontroller, RTC DS3231 time module, HX 711
-                  weight sensors, relay modules, hydraulic pump motors,
-                  wifi shield, resistors, MOSFET and breadboard have
-                  been used. Following the prescribed time of doctor, the
-                  RTC module programs the time for the activation of the
-                  microcontroller. The microcontroller activates the
-                  hydraulic pump motors following the programmed
-                  times. The pump motors then create a vacuum
-                  environment inside the pipeline and pass the medicine
-                  fluid for injection inside the patient's body through the
-                  multiple channel-single cannula. This is consisted of
-                  three units: electrical circuitry unit, mechanical unit
-                  and timer program with reprogram process unit. The
-                  research were carried out through the tests of each and
-                  every units to verify that they were working precisely
-                  and were manifesting the expected outputs.</p>
-              </td>
-              
-            </tr> </tbody></table>
-
+    <!-- Publications Section -->
+    <section id="publications" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
             
+            <!-- Paper 1 -->
+            <div class="paper-item">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <img src="sbhk-net-graphics.PNG" alt="SBHK-Net" class="paper-image">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="paper-title">
+                            <a href="https://doi.org/10.36227/techrxiv.171710259.90201373/v1">
+                                YOLO/SBHK-Net: Occlusion Aware Robot Vision Neural Network with Compound Model Scaling and Re-parameterized Convolution
+                            </a>
+                        </div>
+                        <div class="paper-authors">
+                            <strong>Sheekar Banerjee</strong>, Humayun Kabir
+                        </div>
+                        <div class="paper-venue">
+                            Preprint, 2024
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://www.researchgate.net/publication/381036272_YOLOSBHK-Net_Occlusion_Aware_Robot_Vision_Neural_Network_with_Compound_Model_Scaling_and_Re-parameterized_Convolution">
+                                <i class="fas fa-file-pdf"></i> Preprint
+                            </a>
+                            <a href="https://github.com/ac005sheekar/SBHK-Net">
+                                <i class="fas fa-code"></i> Code
+                            </a>
+                        </div>
+                        <p class="mt-2">In this research, we initiated a unique and cutting-edge backbone neural network for the conventional YOLO algorithm which we named as SBHK-Net. The network boosted up the performance of the existing YOLO algorithm drastically which manifests a strong potential of improving tracking and recognition accuracies of other conventional algorithms in the robot vision industry as well. It has the greatest accuracy 59.2% AP among all known real-time object detectors with 30 FPS or above on GPU RTX3060, and it outperforms all other known object detectors in the range of 5 FPS to 160 FPS.</p>
+                    </div>
+                </div>
+            </div>
 
-<br><br><br><br>
-          
-          
+            <!-- Paper 2 -->
+            <div class="paper-item">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <img src="breast 2020 CNN.png" alt="Breast Cancer Detection" class="paper-image">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="paper-title">
+                            <a href="https://www.biorxiv.org/content/10.1101/2024.05.04.592536v1.abstract">
+                                An Introductory Implementation of Breast Cancer Detection from Mammograms and Pixel Intensity with Efficient-Net Other Neural Nets
+                            </a>
+                        </div>
+                        <div class="paper-authors">
+                            <strong>Sheekar Banerjee</strong>, Humayun Kabir
+                        </div>
+                        <div class="paper-venue">
+                            Cold Spring Harbor Laboratory, 2024
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://www.biorxiv.org/content/10.1101/2024.05.04.592536v1.full.pdf">
+                                <i class="fas fa-file-pdf"></i> bioRxiv
+                            </a>
+                            <a href="https://github.com/ac005sheekar/Breast-Cancer-Detection-with-Pixel-Intensity/">
+                                <i class="fas fa-code"></i> Code
+                            </a>
+                        </div>
+                        <p class="mt-2">We focused upon the deep learning approach to classify the normal and abnormal breast according to the medical imaging from the MIAS dataset of Mammograms and Pixel Intensity. The Convolution Neural Network (CNN) alongside ResNet, AmoebaNet and EfficientNet have been used for the detection with 330 mammograms in which 194 images are normal and 136 are having the identification of abnormal breasts.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Paper 3 -->
+            <div class="paper-item">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <img src="breast.PNG" alt="CEIMVEN" class="paper-image">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="paper-title">
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-53717-2_30">
+                                CEIMVEN: An Approach of Cutting Edge Implementation of Modified Versions of EfficientNet (V1-V2) Architecture for Breast Cancer Detection and Classification from Ultrasound Images
+                            </a>
+                        </div>
+                        <div class="paper-authors">
+                            <strong>Sheekar Banerjee</strong>, Md. Kamrul Hasan Monir
+                        </div>
+                        <div class="paper-venue">
+                            Studies in Computational Intelligence, Springer-Nature, Switzerland, 2024
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://arxiv.org/abs/2308.13356">
+                                <i class="fas fa-file-pdf"></i> arXiv
+                            </a>
+                            <a href="https://docs.google.com/presentation/d/1TERuOyXkmCEQR01EPGFrGaff_N2szD9b/edit?usp=sharing&ouid=113883945430849884931&rtpof=true&sd=true">
+                                <i class="fas fa-presentation"></i> Slides
+                            </a>
+                            <a href="https://github.com/ac005sheekar/CEIMVEN">
+                                <i class="fas fa-code"></i> Code
+                            </a>
+                        </div>
+                        <p class="mt-2">In this research, we focused mostly on our rigorous novel implementations and iterative result analysis of different cutting-edge modified versions of EfficientNet architectures namely EfficientNet-V1 (b0-b7) and EfficientNet-V2 (b0-b3) with ultrasound image, named as CEIMVEN. We utilized transfer learning approach here for using the pre-trained models of EfficientNet versions.</p>
+                    </div>
+                </div>
+            </div>
 
-          
+            <!-- Paper 4 -->
+            <div class="paper-item">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <img src="combo_nano.png" alt="Nano Rover" class="paper-image">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="paper-title">
+                            <a href="https://link.springer.com/chapter/10.1007/978-981-19-2347-0_55">
+                                Nano Rover: A Multi-Sensory Full-Functional Surveillance Robot with Modified Inception-Net
+                            </a>
+                        </div>
+                        <div class="paper-authors">
+                            <strong>Sheekar Banerjee</strong>, Aminun Nahar Jhumur, Md. Ezharul Islam
+                        </div>
+                        <div class="paper-venue">
+                            Lecture Notes on Data Engineering and Communications Technologies, Springer-Nature, Singapore, 2022
+                            <span class="badge badge-award ml-2">Best Paper Award</span>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://docs.google.com/presentation/d/1ASyFQ6cF2blp3uGTeCa4RvwnLy2elrsD/edit?usp=sharing&ouid=113883945430849884931&rtpof=true&sd=true">
+                                <i class="fas fa-presentation"></i> Slides
+                            </a>
+                            <a href="https://drive.google.com/file/d/1Lx_0N-qDk464qy2mpFBdnzqiLk6QxPLf/view">
+                                <i class="fas fa-award"></i> Award Certificate
+                            </a>
+                        </div>
+                        <p class="mt-2">Nano Rover is a significant approach of cost-efficient surveillance and reconnaissance robot which is fully functional and cost-efficient at the same time. It features the service of active reconnaissance mode with LIDAR sensor, location tracking with GPS Neo 6M module, visual information collection, person detection, weapons detection and identification, gender and age prediction of the hostile and other artificial threat detection, etc.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Paper 5 -->
+            <div class="paper-item">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <img src="submarine.PNG" alt="Marine Ecosystem Monitoring" class="paper-image">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="paper-title">
+                            <a href="https://tis.wu.ac.th/index.php/tis/article/view/4205">
+                                A Novel Approach of Marine Ecosystem Monitoring System with Multi-Sensory Submarine on Robotic Platform for Visualizing the Climate Change Effect over Oceanic Environment
+                            </a>
+                        </div>
+                        <div class="paper-authors">
+                            <strong>Sheekar Banerjee</strong>, Aminun Nahar Jhumur
+                        </div>
+                        <div class="paper-venue">
+                            Trends in Sciences (TiS), 2022
+                        </div>
+                        <p class="mt-2">This robotics research project proposes a solution which appears to be a full-fledged Bluetooth controlled Submarine prototype with a sensory chipboard attached inside its endo-skeleton which contains multiple sensors like DHT11 temperature-humidity, dust, CO2 and YL69 pH sensors. The sensory data provides the information of underwater whether the naval environment is habitable for the marine biological species or not, under the terrible effect of global climate change.</p>
+                    </div>
+                </div>
+            </div>
 
-      
-      </td>
-    </tr>
-  </table>
+            <!-- Paper 6 -->
+            <div class="paper-item">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <img src="chatbot-graphic.PNG" alt="Chatbot Optimization" class="paper-image">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="paper-title">
+                            <a href="https://www.researchgate.net/profile/Sheekar-Banerjee/publication/380166199_AN_INTEGRAL_EFFORT_OF_OPTIMIZING_THE_MAJOR_INFORMATION_RETRIEVAL_CHATBOT_ALGORITHMS_WITHIN_A_UNIVERSITY_AUTOMATION_PLATFORM/links/662ec0267091b94e93e35fd8/AN-INTEGRAL-EFFORT-OF-OPTIMIZING-THE-MAJOR-INFORMATION-RETRIEVAL-CHATBOT-ALGORITHMS-WITHIN-A-UNIVERSITY-AUTOMATION-PLATFORM.pdf">
+                                An Integral Effort of Optimizing the Major Information Retrieval Chatbot Algorithms within a University Automation Platform
+                            </a>
+                        </div>
+                        <div class="paper-authors">
+                            <strong>Sheekar Banerjee</strong>, Md. Sakibul Islam
+                        </div>
+                        <div class="paper-venue">
+                            Undergrad Thesis on Natural Language Processing and Human Computer Interaction, 2020
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://www.researchgate.net/profile/Sheekar-Banerjee/publication/380166199_AN_INTEGRAL_EFFORT_OF_OPTIMIZING_THE_MAJOR_INFORMATION_RETRIEVAL_CHATBOT_ALGORITHMS_WITHIN_A_UNIVERSITY_AUTOMATION_PLATFORM/links/662ec0267091b94e93e35fd8/AN-INTEGRAL-EFFORT-OF-OPTIMIZING-THE-MAJOR-INFORMATION-RETRIEVAL-CHATBOT-ALGORITHMS-WITHIN-A-UNIVERSITY-AUTOMATION-PLATFORM.pdf">
+                                <i class="fas fa-file-pdf"></i> ResearchGate
+                            </a>
+                            <a href="https://github.com/ac005sheekar/Chatbot-Automation-with-Python-Keras-and-Tensorflow">
+                                <i class="fas fa-code"></i> Code
+                            </a>
+                        </div>
+                        <p class="mt-2">In this research, we tried to represent an optimized implementation of different chatbot algorithmic approaches within a single University Automation query platform where the previous chatbots were developed concerning the utility areas of agriculture, economics, medical science with disease prediction, admission system and tourism.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paper 7 -->
+            <div class="paper-item">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <img src="sim.jpg" alt="Smart Injector" class="paper-image">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="paper-title">
+                            <a href="https://www.researchgate.net/publication/379537385_The_Smart_Injector_A_Robotic_Approach_of_Automated_Multiple_Injection_System_for_Critical_Patients_using_Real_Time_Clock_Feature">
+                                The Smart Injector: A Robotic Approach of Automated Multiple Injection System for Critical Patients using Real Time Clock Feature
+                            </a>
+                        </div>
+                        <div class="paper-authors">
+                            <strong>Sheekar Banerjee</strong>, Md. Alomgir Hossain
+                        </div>
+                        <div class="paper-venue">
+                            Voluntary Research Work at IUBAT CSE Robotics Club, 2019
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://www.researchgate.net/publication/379537385_The_Smart_Injector_A_Robotic_Approach_of_Automated_Multiple_Injection_System_for_Critical_Patients_using_Real_Time_Clock_Feature#fullTextFileContent">
+                                <i class="fas fa-file-pdf"></i> ResearchGate
+                            </a>
+                            <a href="https://github.com/ac005sheekar/Smart-Injector">
+                                <i class="fas fa-code"></i> Code
+                            </a>
+                        </div>
+                        <p class="mt-2">In the rural world of medical services, we generally notice a lot of havoc which generally happens in the hospitals, clinics and related other medical centers. The conditions of Intensive Care Units (ICU) of the rural areas are quite intolerable because of the lack of qualified nurses. This study aims to minimize the hazard at the highest accuracy level possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Contact & Connect</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p class="lead">Feel free to reach out for research collaborations or inquiries</p>
+                    <div class="social-links mt-4">
+                        <a href="mailto:sheekar.banerjee@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=TpLbmAcAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="Sheekar_CV_Academy.pdf" title="CV"><i class="fas fa-file-pdf"></i></a>
+                        <a href="https://www.linkedin.com/in/sheekar-banerjee-6b189b12a/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/ac005sheekar" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://projecthub.arduino.cc/sheekar" title="Arduino"><i class="fas fa-microchip"></i></a>
+                        <a href="https://www.youtube.com/@sheekarbanerjee" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://soundcloud.com/sheekar-banerjee" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Sheekar Banerjee. All Rights Reserved.</p>
+            <p>Designed for PhD Admissions</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
